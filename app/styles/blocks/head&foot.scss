@@ -1,0 +1,202 @@
+/*======== HEADER =========*/
+
+header[role='banner']{
+  @include rem('padding-top', 30);
+  @include rem('padding-bottom', 30);
+
+  .setw{
+    text-align: center;
+
+    display: table;
+    width: 100%;
+  }
+}
+
+
+
+/*======== BASIC COLUMNS =========*/
+#header-logo{
+  display: block;
+  width:178px;
+
+  img{
+    display: block;
+    max-width: 100%;
+  }
+}
+
+#header-left, #header-center, #header-right{
+  display: table-cell;
+  vertical-align: middle;
+
+  font-size: #{$font-size-base}px;
+  line-height: $line-height-text;
+  letter-spacing: 0;
+
+  text-align: left;
+}
+
+
+
+#header-center{
+  text-align: center;
+  text-transform: uppercase;
+  font-family: $font-family-third;
+  @include rem('font-size', 20);
+}
+
+#header-right{
+  text-align: right;
+}
+
+
+
+
+
+/*======== NAVIGATION =========*/
+
+#header-nav, #header-textsize{
+  &, li, a {
+    @extend %inline-block;
+    position: relative;
+    color: $color-beige;
+  }
+
+  a{
+    @include rem('padding', 16);
+  }
+}
+
+#header-nav{
+  @extend %b_beige;
+  @include rem('margin-right', 30);
+
+  &, ul{
+    list-style: none;
+    margin-left: 0;
+  }
+
+
+  a{
+
+    .i-a_down{
+      position: absolute;
+      @include rem('bottom', 6);
+      left: 50%;
+      @include rem('font-size', 6);
+      @include rem('margin-left', -5);
+    }
+  }
+
+
+  .header-nav-submenu{
+    // opacity: 0;
+    // display: none;
+
+    position: absolute;
+    @include rem('top', 70);
+    left: 0;
+    z-index: 10;
+
+    text-align: left;
+
+    text-transform: none;
+    font-family: $font-family-base;
+    font-size: #{$font-size-base}px;
+
+    @include rem('padding', 0, 8);
+
+    background-color: #fff;
+
+    outline-style: solid;
+    outline-color: $color-nav-gray;
+    @include rem('outline-width', 8);
+
+    @include rem('min-width', 320);
+
+    &, a{
+      color: $color-text;
+    }
+
+    li, a{
+      display: block;
+    }
+
+    a{
+      @include rem('padding', 8, 0);
+    }
+
+    li{
+      border-style: solid;
+      border-color: $color-nav-gray;
+      @include rem('border-width', 1, 0, 0);
+
+      &:first-child{
+        border-top: 0;
+      }
+    }
+  
+  }
+
+
+}
+
+#header-textsize{
+
+  a{
+    @extend %b_beige;
+
+    @include rem('margin-left', 6);
+
+    &:first-child{
+      margin-left: 0;
+    }
+  }
+}
+
+
+
+
+
+
+/*======== PHONE =========*/
+.header-phone-desk{
+  @extend %inline-block;
+  text-align: left;
+  font-family: $font-family-second;
+  line-height: 1;
+  position: relative;
+  box-sizing: border-box;
+  @include rem('padding-left', 40);
+
+ .i-phone{
+    color: $color-beige;
+
+    @include rem('font-size', 50);
+    line-height: 1;
+
+    position: absolute;
+    left: 0;
+    top: 50%;
+    @include rem('margin-top', -25);
+
+  }
+
+  a{
+    font-weight: bold;
+    @include rem('font-size', 22);
+    color: $color-text;
+  }
+
+  span{
+    font-family: $font-family-base;
+    @include rem('font-size', 11);
+    font-weight: 300;
+
+    @include rem('margin-left', 5);
+
+    &:first-child{
+      margin-left: 0;
+    }
+  }
+}

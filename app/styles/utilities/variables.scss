@@ -1,0 +1,31 @@
+$width-base-max: 1280px;
+$padding-base-side: 40px;
+
+// $width-base-maxtext: 720px;
+// $width-base-wide: 2300px;
+
+$mq-menuhide: 700px;
+
+
+$color-blue: #237AF5;
+$color-red: #FF1D1D;
+$color-beige: #8D7E58;
+
+$color-gray-1: #F5F5F5;
+
+$color-nav-gray: #EDEDED;
+
+$color-text: #231F20;
+$color-lk: $color-blue;
+$color-lk-hover: $color-red;
+
+
+$font-size-base: 13;
+$line-height-text: 1.2;
+$font-family-base:  'Open Sans', Helvetica, Arial, sans-serif;
+$font-family-second:  'DIN Pro', 'Open Sans', Helvetica, Arial, sans-serif;
+$font-family-third:  'DIN Pro Condensed', 'PT Sans', 'Open Sans', Helvetica, Arial, sans-serif;
+
+$modernizr-nosvg: '.no-svg';
+$modernizr-svg: '.svg';
+$modernizr-cssanimations: '.cssanimations';

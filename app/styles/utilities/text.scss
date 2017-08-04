@@ -1,0 +1,64 @@
+@include font-face("DIN Pro", font-files("DINPro.woff","DINPro.ttf"), "DINPro.eot", 400);
+@include font-face("DIN Pro", font-files("DINPro-Medium.woff","DINPro-Medium.ttf"), "DINPro-Medium.eot", 600);
+@include font-face("DIN Pro", font-files("DINPro-Bold.woff","DINPro-Bold.ttf"), "DINPro-Bold.eot", 800);
+
+@include font-face("DIN Pro Condensed", font-files("DINPro-Cond.woff","DINPro-Cond.ttf"), "DINPro-Cond.eot", 400);
+
+
+
+%font_base
+{
+  font-weight: 400;
+  @include rem('font-size', $font-size-base);
+  line-height: $line-height-text;
+  font-family: $font-family-base;
+	
+	word-spacing: normal;
+	letter-spacing: 0;
+}
+
+
+
+
+
+
+/*=== TEXT COLORS ====*/
+body .c-red, body a.c-red { color: $color-red; } //all these selector instead of !important for old browsers support
+
+
+
+
+/*=== TEXT STYLES ====*/
+
+#{headings()} {
+  text-align: center;
+
+  &:first-child{
+    	margin-top: 0;
+	}
+}
+
+
+a {
+  @extend %link_noline;
+  color: $color-blue;
+  transition: 0.2s ease-in color;
+}
+
+ul, ol {
+  margin-left: 15px;
+
+  ul, ol{
+  	// margin-top: ;
+  }
+}
+
+li, p, blockquote{
+  // margin-bottom: ;
+
+  &:last-child{
+  	margin-bottom: 0;
+  }
+}
+
+blockquote{}
