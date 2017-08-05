@@ -21,17 +21,17 @@
         <div id="header-left"><a id="header-logo" href="#"><img alt="Ärztehaus Grein beim Dr. Huemer" src="assets/i/Aerztehaus-Huemer-logo.png" srcset="assets/i/Aerztehaus-Huemer-logo-x2.png"></a></div>
         <div id="header-center">
           <ul id="header-nav">
-            <li><a href="#">Team</a></li>
-            <li><a href="#">Leistungen<span class="i-a_down"></span></a>
-              <ul class="header-nav-submenu">
+            <li class="current current-blue"><a href="#">Team</a></li>
+            <li class="dropdown current"><a href="#" class="dropdown__toggle">Leistungen<span class="i-a_down"></span></a>
+              <ul class="header-nav-submenu dropdown__content">
                 <li><a href="#">Allgemeinmedizin</a></li>
                 <li><a href="#">Vorsorgeuntersuchung</a></li>
               </ul>
             </li>
-            <li><a href="#">Ärtze</a></li>
-            <li><a href="#">Kontakt</a></li>
+            <li class="current current-beige"><a href="#">Ärtze</a></li>
+            <li class="current"><a href="#">Kontakt</a></li>
           </ul>
-          <div id="header-textsize"><a href="#">A -</a><a href="#">A +</a></div>
+          <div class="header-textsize"><a href="#">A -</a><a href="#">A +</a></div>
         </div>
         <div id="header-right">
           <div class="header-phone-desk">
@@ -40,7 +40,28 @@
             <div class="i-phone"></div>
           </div>
         </div>
-        <div id="header-right-mob"></div>
+        <div id="header-right-mob">
+          <div id="header-mob-nav" class="dropdown"><a href="#" class="dropdown__toggle"><span class="icon"></span></a>
+            <div class="dropdown__content">
+              <ul>
+                <li class="active"><a href="#">Team</a></li>
+                <li><a href="#">Leistungen</a></li>
+                <li><a href="#">Ärtze</a></li>
+                <li><a href="#">Kontakt</a></li>
+              </ul>
+              <div class="header-textsize"><a href="#">A -</a><a href="#">A +</a></div>
+            </div>
+          </div>
+          <div id="header-mob-phone" class="dropdown"><a href="#" class="dropdown__toggle"><span class="icon"></span></a>
+            <div class="dropdown__content">
+              <div class="header-phone-desk">
+                <div><a href="tel:" class="c-red">07268 244</a></div>
+                <div><a href="tel:">144</a><span>Notruf 24h</span></div>
+                <div class="i-phone"></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
     <main role="main"></main>

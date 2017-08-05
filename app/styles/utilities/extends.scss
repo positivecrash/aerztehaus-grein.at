@@ -5,6 +5,11 @@
 	padding-right: $padding-base-side;
 	box-sizing: border-box;
 	margin: 0 auto;
+
+	@include mobile(){
+		padding-left: $padding-base-side-m; 
+		padding-right: $padding-base-side-m;
+	}
 }
 
 %inline-block 

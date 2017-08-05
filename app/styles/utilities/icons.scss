@@ -43,8 +43,14 @@
 	@if $filename == a_down {
 		$char: "\E001";
 	}
-	@if $filename == phone {
+	@if $filename == cancel {
 		$char: "\E002";
+	}
+	@if $filename == nav {
+		$char: "\E003";
+	}
+	@if $filename == phone {
+		$char: "\E004";
 	}
 
 	@return $char;
@@ -58,6 +64,14 @@
 
 .i-a_down {
 	@include icon(a_down);
+	@extend %icon-styles;
+}
+.i-cancel {
+	@include icon(cancel);
+	@extend %icon-styles;
+}
+.i-nav {
+	@include icon(nav);
 	@extend %icon-styles;
 }
 .i-phone {

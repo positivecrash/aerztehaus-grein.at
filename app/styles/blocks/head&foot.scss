@@ -4,6 +4,11 @@ header[role='banner']{
   @include rem('padding-top', 30);
   @include rem('padding-bottom', 30);
 
+  @include mobile(){
+    padding-top: $padding-base-side-m * 2; 
+    padding-bottom: $padding-base-side-m * 2;
+  }
+
   .setw{
     text-align: center;
 
@@ -38,7 +43,7 @@ header[role='banner']{
 
 
 
-#header-center{
+#header-center, #header-mob-nav{
   text-align: center;
   text-transform: uppercase;
   font-family: $font-family-third;
@@ -55,7 +60,7 @@ header[role='banner']{
 
 /*======== NAVIGATION =========*/
 
-#header-nav, #header-textsize{
+#header-nav, .header-textsize{
   &, li, a {
     @extend %inline-block;
     position: relative;
@@ -77,26 +82,34 @@ header[role='banner']{
   }
 
 
-  a{
+  & > li{
 
-    .i-a_down{
-      position: absolute;
-      @include rem('bottom', 6);
-      left: 50%;
-      @include rem('font-size', 6);
-      @include rem('margin-left', -5);
+    & > a{
+
+      .i-a_down{
+        position: absolute;
+        @include rem('bottom', 6);
+        left: 50%;
+        @include rem('font-size', 6);
+        @include rem('margin-left', -5);
+      }
     }
+
+    &.active > a, &.current > a{
+      background-color: $color-gray-light;
+    }
+
+    &.current-blue.current > a{ background-color: $color-blue-light; }
+    &.current-beige.current > a{ background-color: $color-beige-light; }
+
   }
 
 
-  .header-nav-submenu{
-    // opacity: 0;
-    // display: none;
 
-    position: absolute;
+  .header-nav-submenu{
+    
     @include rem('top', 70);
-    left: 0;
-    z-index: 10;
+    @include rem('left', 8);
 
     text-align: left;
 
@@ -109,7 +122,7 @@ header[role='banner']{
     background-color: #fff;
 
     outline-style: solid;
-    outline-color: $color-nav-gray;
+    outline-color: $color-gray-light;
     @include rem('outline-width', 8);
 
     @include rem('min-width', 320);
@@ -128,20 +141,22 @@ header[role='banner']{
 
     li{
       border-style: solid;
-      border-color: $color-nav-gray;
+      border-color: $color-gray-light;
       @include rem('border-width', 1, 0, 0);
 
       &:first-child{
         border-top: 0;
       }
     }
+
   
   }
 
-
 }
 
-#header-textsize{
+
+
+.header-textsize{
 
   a{
     @extend %b_beige;
@@ -170,10 +185,7 @@ header[role='banner']{
   @include rem('padding-left', 40);
 
  .i-phone{
-    color: $color-beige;
-
     @include rem('font-size', 50);
-    line-height: 1;
 
     position: absolute;
     left: 0;
@@ -200,3 +212,180 @@ header[role='banner']{
     }
   }
 }
+
+
+
+
+/*======== MOBILE TOGGLERS =========*/
+
+#header-right-mob{
+  display: none;
+  text-align: right;
+
+  .dropdown{
+    @extend %inline-block;
+    position: static;
+
+    &.active{
+      .dropdown__toggle{
+        position: relative;
+        z-index: 1000;
+
+        .icon{
+          @include icon(cancel);
+          @include rem('font-size', 20);
+        }
+      }
+    }
+  }
+
+
+
+  .dropdown__toggle{
+    @extend %inline-block;
+    width: 44px;
+    height: 44px;
+    box-sizing: border-box;
+
+    @include rem('font-size', 30);
+    line-height: 1;
+
+    border-style: solid;
+    @include rem('border-width', 1);
+
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+
+    .icon{
+      @extend %icon-styles;
+      display: block;
+    }
+  }
+
+  .dropdown__content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    @include rem('padding', 30);
+
+    padding-left: $padding-base-side-m; 
+    padding-right: $padding-base-side-m;
+
+    @include mobile(){
+      @include rem('padding', 20);
+    }
+  }
+
+
+
+  .header-textsize a{
+    @include rem('font-size', 29);
+    border-color: #fff;
+
+    margin-left: 20px;
+    margin-top: 20px;
+
+    &:first-child{
+      margin-left: 0;
+    }
+  }
+}
+
+
+
+#header-mob-phone{
+  margin-left: 10px;
+
+  .dropdown__toggle{
+
+    color: $color-red;
+    border-color: $color-red;
+
+    .icon{
+      @include icon(phone);
+    }
+  }
+
+  .dropdown__content{
+    background-color: #fff;
+    text-align: left;
+  }
+
+}
+
+#header-mob-nav{
+
+  text-align: center;
+
+  .dropdown__toggle{
+
+    color: $color-beige;
+    border-color: $color-beige;
+
+    .icon{
+      @include icon(nav);
+      @include rem('font-size', 20);
+    }
+  }
+
+  .dropdown__content{
+    background-color: $color-beige;
+    padding-top: $padding-base-side-m * 4 + 44px;
+
+    &, a {
+      color: #fff;
+    }
+
+    ul{
+      list-style: none;
+    }
+
+    li{
+      a{
+        display: block;
+        padding: 8px 0;
+        border-top: 1px solid $color-text;
+      }
+
+      &:first-child a {
+        border-top: 0;
+      }
+
+      &.active a{
+        background-color: $color-text;
+      }
+    }
+
+  }
+
+  &.active{
+      .dropdown__toggle{
+        border-color: #fff;
+        right: -54px;
+
+        .icon{
+          color: #fff;
+        }
+      }
+    }
+}
+
+
+@media screen and (max-width: #{$mq-menuhide}) 
+{
+  #header-center, #header-right{
+    display: none;
+  }
+
+  #header-right-mob{
+    display: block;
+  }
+
+  #header-logo{
+    width: 144px
+  }
+}
+

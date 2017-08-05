@@ -1,6 +1,6 @@
 @mixin mobile 
 {
-	@media screen and (max-width: 570px) 
+	@media screen and (max-width: #{$mq-mobile}) 
 	{
 		@content;
 	}
@@ -8,7 +8,7 @@
 
 @mixin min_mobile 
 {
-	@media screen and (min-width: 570px) 
+	@media screen and (min-width: #{$mq-mobile}) 
 	{
 		@content;
 	}

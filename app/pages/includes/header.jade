@@ -5,25 +5,23 @@ header(role='banner')
 
 		#header-center
 			ul#header-nav
-				li
+				li.current.current-blue
 					a(href="#") Team
-				li
-					a(href="#")
+				li.dropdown.current
+					a.dropdown__toggle(href="#")
 						| Leistungen
 						span.i-a_down
 							
-					ul.header-nav-submenu
-						li
-							a(href="#") Allgemeinmedizin
-						li
-							a(href="#") Vorsorgeuntersuchung
+					ul.header-nav-submenu.dropdown__content
+						li: a(href="#") Allgemeinmedizin
+						li: a(href="#") Vorsorgeuntersuchung
 
-				li
+				li.current.current-beige
 					a(href="#") Ärtze
-				li
+				li.current
 					a(href="#") Kontakt
 
-			#header-textsize
+			.header-textsize
 				a(href="#") A -
 				a(href="#") A +
 
@@ -34,4 +32,37 @@ header(role='banner')
 					a(href="tel:") 144
 					span Notruf 24h
 				.i-phone
+
 		#header-right-mob
+
+
+			#header-mob-nav.dropdown
+				a.dropdown__toggle(href="#")
+					span.icon
+						
+				.dropdown__content
+
+					ul
+						li.active: a(href="#") Team
+						li: a(href="#") Leistungen
+						li: a(href="#") Ärtze
+						li: a(href="#") Kontakt
+
+					.header-textsize
+						a(href="#") A -
+						a(href="#") A +
+
+
+
+			#header-mob-phone.dropdown
+				a.dropdown__toggle(href="#")
+					span.icon
+						
+				.dropdown__content
+
+					.header-phone-desk
+						div: a.c-red(href="tel:") 07268 244
+						div
+							a(href="tel:") 144
+							span Notruf 24h
+						.i-phone

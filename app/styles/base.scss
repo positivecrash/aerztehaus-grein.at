@@ -121,6 +121,36 @@ main{
 }
 
 
+
+
+
+
+.dropdown{
+  position:  relative;
+
+  .dropdown__content{
+    opacity: 0;
+    display: none;
+
+    position: absolute;
+    z-index: 10;
+    @include rem('top', $font-size-base*1.2);
+    left: 0;
+  }
+
+
+  &.active{
+    .dropdown__content{
+      display: block;
+      animation: 0.2s fadeIn ease-in-out forwards;
+    }
+  }
+}
+
+
+
+
+
 // .line-obj{
 //   & > *{
 //     display: inline-block;

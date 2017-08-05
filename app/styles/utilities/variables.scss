@@ -1,19 +1,27 @@
 $width-base-max: 1280px;
 $padding-base-side: 40px;
+$padding-base-side-m: 10px;
 
 // $width-base-maxtext: 720px;
 // $width-base-wide: 2300px;
 
-$mq-menuhide: 700px;
+$mq-menuhide: 927px;
+$mq-mobile: 600px;
 
 
 $color-blue: #237AF5;
 $color-red: #FF1D1D;
 $color-beige: #8D7E58;
 
+$color-beige-light: #D8D1C0;
+$color-blue-light: #E4EBF5;
+$color-gray-light: #EDEDED;
+
 $color-gray-1: #F5F5F5;
 
 $color-nav-gray: #EDEDED;
+$color-nav-blue: #E4EBF5;
+$color-nav-beige: #D8D1C0;
 
 $color-text: #231F20;
 $color-lk: $color-blue;
