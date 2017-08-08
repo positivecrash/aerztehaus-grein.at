@@ -1,7 +1,43 @@
 extends extends/layout.jade
 
-block head
+block html
 	- var pageTitle = 'Ärztehaus Grein – Dr. Huemer'
+	- var screen = true
+	- var bodyclass = 'index'
 
 block content
-	main(role="main")
+	//- #index.screen
+	include includes/header.jade
+
+	#index-slider-wrap.setw.screen
+		#index-slider.anyslide(data-anyslide="controls total-3")
+			.js-slider-viewport
+				div
+					.index-slider-text
+						.slide-0
+							img.d-b(alt="", src="assets/i/banners/sign.png", srcset="assets/i/banners/sign@2x.png")
+							a.btn-lined(href="#") ÜBER DR. HUEMER
+						.slide-1
+							img.d-b(alt="", src="assets/i/banners/sign.png", srcset="assets/i/banners/sign@2x.png")
+							a.btn-lined(href="#") ÜBER TEAM
+						.slide-2
+							h2 Die besten Ärzte
+							p FÜR SIE DA
+							a.btn-lined(href="#") LISTE DER ÄRZTE
+
+						.js-slider-controls
+							a.prev(href="#"): span.i-a_left
+							a.next(href="#"): span.i-a_right
+
+					.index-slider-img
+						img.slide-0(alt="", src="assets/i/banners/Huemer.png", srcset="assets/i/banners/Huemer@2x.png")
+						img#team-1.slide-1(alt="", src="assets/i/banners/Team-1.png", srcset="assets/i/banners/Team-1@2x.png")
+						img#team-2.slide-1.slide-1_active(alt="", src="assets/i/banners/Team-2.png", srcset="assets/i/banners/Team-2@2x.png")
+						img#team-3.slide-1(alt="", src="assets/i/banners/Team-3.png", srcset="assets/i/banners/Team-3@2x.png")
+						img#team-4.slide-1(alt="", src="assets/i/banners/Team-4.png", srcset="assets/i/banners/Team-4@2x.png")
+						img.slide-2(alt="", src="assets/i/banners/artze.png", srcset="assets/i/banners/artze@2x.png")
+						img.slide-2.slide-2-mob(alt="", src="assets/i/banners/artzeSingle.png", srcset="assets/i/banners/artzeSingle@2x.png")
+
+
+	include includes/footer.jade
+		

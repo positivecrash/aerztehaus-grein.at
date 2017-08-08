@@ -178,7 +178,7 @@ header[role='banner']{
 .header-phone-desk{
   @extend %inline-block;
   text-align: left;
-  font-family: $font-family-second;
+  // font-family: $font-family-second;
   line-height: 1;
   position: relative;
   box-sizing: border-box;
@@ -296,6 +296,9 @@ header[role='banner']{
 
 
 
+
+/*======== MOBILE HEADER =========*/
+
 #header-mob-phone{
   margin-left: 10px;
 
@@ -389,3 +392,26 @@ header[role='banner']{
   }
 }
 
+
+
+
+
+/*======== FOOTER =========*/
+
+footer[role='contentinfo']{
+  background-color: $color-text;
+  color: $color-beige;
+  @include rem('padding', 10, 0);
+  line-height: 1;
+  font-weight: 300;
+
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  a{
+    color: #fff;
+  }
+}

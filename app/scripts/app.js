@@ -83,6 +83,19 @@ jQuery(document).ready(function($){
         });
 
     }
+
+
+
+
+    /*====== SLIDER ======*/
+    $('#index-slider').AnySlide({
+		singleContainer: true,
+		loadFirst: 'img',
+		anchorSupport: false,
+		autoplay: true,
+		autoHover: false,
+		loop: true
+	});
     
 
 

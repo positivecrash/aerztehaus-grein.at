@@ -1,10 +1,10 @@
+block html
 doctype html
 html(lang='en')
 	head
 		meta(http-equiv="Content-Type" content="text/html;charset=UTF-8")
 		meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimal-ui')
 		
-		block head
 		title #{pageTitle} | aerztehaus-grein.at
 		meta(name='description' content=pageDescription || '')
 		meta(name='keywords' content=pageKeywords || '')
@@ -19,9 +19,11 @@ html(lang='en')
 		link(rel="shortcut icon" href="favicon.ico" type="image/x-icon")
 		link(rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png")
 		link(rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png")
-	body
-		include  ../includes/header.jade
+	body(class=bodyclass)
+		if (!screen)
+			include  ../includes/header.jade
 		
 		block content
 
-		include ../includes/footer.jade
+		if (!screen)
+			include ../includes/footer.jade

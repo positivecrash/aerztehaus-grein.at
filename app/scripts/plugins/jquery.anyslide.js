@@ -10,13 +10,25 @@
   var defaults = {
 
       // GENERAL
-      tab: '.js-tabs-head',
-      tabEl: 'a',
-      content: '.js-tabs-content',
+      content: '.js-slider-viewport',
       contentEl: 'div',
       classActive: 'active',  // this class for both – tabs and content
       loadFirst: false,   // should we check if all element in content of slider is loaded. There should be a selector in parametr
       anchorSupport: true,  //it is only for NOT single content so far
+      loop: false, // If true, clicking "Next" while on the last slide will transition to the first slide and vice-versa
+      autoplay: false, // Autoplay, Slides will automatically transition
+      pause: 4000, //Autoplay pause, The amount of time (in ms) between each auto transition
+      autoHover: true, //Auto show will pause when mouse hovers over slider
+
+      // PAGER
+      tab: '.js-slider-pager',
+      tabEl: 'a',
+
+      // CONTROLS
+      controls: '.js-slider-controls',
+      controlsPrev: '.prev',
+      controlsNext: '.next',
+      controlDisabled: 'disabled', //Class for non-active control (when no content to show further)
 
 
       //FOR SLIDER WITH ONE BLOCK FOR CONTENT
@@ -77,10 +89,14 @@
       slider.config = $.extend({}, defaults, options);
 
       // store tabs
-      slider.tab = el.children(slider.config.tab).children(slider.config.tabEl);
+      slider.tab = el.find(slider.config.tab).children(slider.config.tabEl);
 
-      // store container for content
+      // store containers for content
       slider.content = el.children(slider.config.content).children(slider.config.contentEl);
+
+      // store container for controls
+      // slider.controls = el.children(slider.config.controls);
+      slider.controls = el.find(slider.config.controls);
 
       // used if singleContainer == true
       slider.activeslide = 'init';
@@ -94,6 +110,12 @@
       //detect show content or not
       if (slider.content.length > 0){
         slider.hascontent = true
+      }
+
+      //detect if there are controls
+      if (slider.controls.length > 0){
+        slider.hascontrols = true;
+        slider.length = countSlides();
       }
 
 
@@ -146,52 +168,32 @@
 
 
 
-    var contentHide = function(timeout) {
-
-        setTimeout(function(){
-          // wrap content with help selector
-          el.children(slider.config.content).wrapInner('<div class="anyslide-content"></div>');
-
-          // add loader
-          el.children(slider.config.content).prepend('<div class="anyslide-loader"></div>');
-
-          // hide content selector
-          slider.content.find('.anyslide-content').hide();
-
-        }, timeout);
-
-    }
-
-
-    var contentShow = function(timeout) {
-
-        setTimeout(function(){
-          el.children(slider.config.content).find('.anyslide-loader').remove();
-          el.children(slider.config.content).find('.anyslide-content').fadeIn();
-        }, timeout);
-
-    }
-
-
-
-
     var setup = function() {
 
-      var active = getActiveSlide();
+      getActiveSlide();
 
      // 1. show default slide
-      show(active);
+      show(slider.activeslide);
+
+    // 2. if there is autoplay set up
+      if (slider.config.autoplay)
+        initAuto(slider.activeslide);
+      // else
+      //   show(slider.activeslide);
 
       // 2.  watch for changes and show another slide if needed
       action();
 
+
       // 3. onSliderLoad callback
-      slider.config.onSliderLoad.call(el, active);
+      slider.config.onSliderLoad.call(el, slider.activeslide);
 
     }
 
 
     var show = function(index) {
+
+      setActiveIndex(index);
 
       if ( slider.hascontent ){
         showContent(index);
@@ -205,6 +207,10 @@
         scrollTop();
       }
 
+      if ( slider.hascontrols ){
+        controlsState();
+      }
+
 
       // onSlideChange callback
       slider.config.onSlideChange.call(el, index);
@@ -212,24 +218,73 @@
     }
 
 
-    var scrollTop = function(){
 
-        // set offset for better viewing
-        var offset = 0;
+    var startAuto = function(startIndex) {
 
-        if ($w.width() > slider.config.mobileViewPort ){
-          offset = $(el).offset().top - slider.config.desktopOffset;
+      // if an interval already exists, disregard call
+      if (slider.interval) { return; }
+
+      var index = startIndex;
+      slider.play = true;
+
+
+      // create an interval
+      slider.interval = setInterval(function() {
+
+        if ( index < (slider.length - 1) ){
+          index++;
         }
         else{
-          offset = $(el).offset().top - slider.config.mobileOffset;
+          if ( slider.config.loop ){
+            index = 0;
+          }
+          else
+            stopAuto();
         }
 
+        if ( slider.play )
+          show(index);
 
-        $('html, body')
-          .delay(slider.config.scrollTopDelay)
-          .animate({scrollTop: offset }, slider.config.scrollTopSpeed);
+        
+      }, slider.config.pause);
 
     }
+
+
+    var stopAuto = function(){
+      // if no interval exists, disregard call
+      if (!slider.interval) { return; }
+
+      clearInterval(slider.interval);
+      slider.interval = null; //reset
+
+      slider.play = false;
+    }
+
+
+
+    var initAuto = function(startIndex) {
+      startAuto(startIndex);
+
+      if ( slider.config.autoHover ){
+        el.on({
+          mouseenter: function () {
+            slider.autoplayPaused = true;
+            stopAuto();
+          },
+          mouseleave: function () {
+            if ( slider.autoplayPaused ){
+              startAuto(slider.activeslide);
+              slider.autoplayPaused = null; //reset
+            }
+          }
+        });
+      }
+
+    }
+
+
+
 
 
 
@@ -245,18 +300,46 @@
           e.preventDefault();
           e.stopPropagation();
 
-          setActiveIndex($(this).index());
-          show(slider.activeslide);
+          show($(this).index());
 
         });
       }
 
 
+      if ( slider.hascontrols ){
+        controlsAction();
+      }
 
     }
 
 
 
+
+    var contentHide = function(timeout) {
+
+        setTimeout(function(){
+          // wrap content with help selector
+          el.children(slider.config.content).wrapInner('<div class="anyslide-content"></div>');
+
+          // add loader
+          el.children(slider.config.content).prepend('<div class="anyslide-loader"></div>');
+
+          // hide content selector
+          el.children(slider.config.content).find('.anyslide-content').hide();
+
+        }, timeout);
+
+    }
+
+
+    var contentShow = function(timeout) {
+
+        setTimeout(function(){
+          el.children(slider.config.content).find('.anyslide-loader').remove();
+          el.children(slider.config.content).find('.anyslide-content').fadeIn();
+        }, timeout);
+
+    }
 
 
 
@@ -278,8 +361,6 @@
     }
 
 
-
-
     var getActiveSlide = function() {
 
       if ( slider.config.anchorSupport ){
@@ -291,8 +372,6 @@
           else
             setActiveIndex(0);
       }
-
-    
 
       return slider.activeslide;
     }
@@ -318,17 +397,76 @@
     }
 
 
+    var addActiveClass = function(object, index){
+
+      object.each(function(){
+          $(this).removeClass(slider.config.classActive);
+      });
+
+      object.eq(index).addClass(slider.config.classActive);
+    }
+
+
+
+
+    var countSlides = function(){
+      var count = 0;
+
+      // For parrallax effects we need all content in one slide technically
+      if ( slider.config.singleContainer ){   
+          if ( el.data('anyslide') ){
+            attr = el.data('anyslide').split(' ');
+
+            for( var i = 0; i < attr.length; ++i ){
+              // find an element in our 'attr' array which contains word 'total'
+              if( attr[i].indexOf( 'total' ) >= 0 ){
+                count = attr[i].split('-')[1]; // get 2 element in array ['total', 'some number']
+              }
+            }
+
+          }
+      }
+      // If there is normal content separated with some selectors (by default <div>)
+      else{
+         slider.content.each(function(){
+          count++;
+         });
+      }
+
+      return count;
+    }
+
+
+    var scrollTop = function(){
+
+        // set offset for better viewing
+        var offset = 0;
+
+        if ($w.width() > slider.config.mobileViewPort ){
+          offset = $(el).offset().top - slider.config.desktopOffset;
+        }
+        else{
+          offset = $(el).offset().top - slider.config.mobileOffset;
+        }
+
+
+        $('html, body')
+          .delay(slider.config.scrollTopDelay)
+          .animate({scrollTop: offset }, slider.config.scrollTopSpeed);
+
+    }
+
 
 
     var showContent = function(index) {
 
+
+      // For parrallax effects we need all content in one slide technically
       if ( slider.config.singleContainer ){
           slider.content
-            .removeClass()
-            .addClass(slider.config.classSlide+index);
-
-
-          slider.content.addClass(slider.config.classPrevSlide+slider.prevslide);
+            .removeClass() //remove all classes before
+            .addClass(slider.config.classSlide+index)  //add class of active slide
+            .addClass(slider.config.classPrevSlide+slider.prevslide);  //add class for previous slider (e.g. to setup specific styles for diferrent directions)
             
 
       }
@@ -346,17 +484,85 @@
     }
 
 
+    var controlsState = function(){
+
+      //Checks state for previous control
+      if ( !slider.config.loop && slider.activeslide == 0 )
+        slider.controls.find(slider.config.controlsPrev).addClass(slider.config.controlDisabled);
+      else
+        slider.controls.find(slider.config.controlsPrev).removeClass(slider.config.controlDisabled);
+
+      
+      //Checks state for next control
+      if ( !slider.config.loop && slider.activeslide == (slider.length - 1) )
+        slider.controls.find(slider.config.controlsNext).addClass(slider.config.controlDisabled);
+      else
+        slider.controls.find(slider.config.controlsNext).removeClass(slider.config.controlDisabled);
+      
+    }
 
 
 
-    var addActiveClass = function(object, index){
+    var controlsAction = function(){
+      
+     
+      slider.controls.find(slider.config.controlsPrev).on('click', function(e){
 
-      object.each(function(){
-          $(this).removeClass(slider.config.classActive);
+        e.preventDefault();
+        e.stopPropagation();
+
+        console.log('prev');
+
+
+        var prevSlide = 0;
+
+
+        if ( slider.activeslide == 0 ){
+          if ( slider.config.loop )
+            prevSlide = slider.length-1;
+          else
+            return;
+        }
+        else{
+          prevSlide = slider.activeslide - 1;
+        }
+
+
+        show(prevSlide);
+
+
       });
 
-      object.eq(index).addClass(slider.config.classActive);
+
+      slider.controls.find(slider.config.controlsNext).on('click', function(e){
+
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        console.log('next');
+
+        var nextSlide = 0;
+
+
+        if ( slider.activeslide == (slider.length - 1)){
+          if ( slider.config.loop )
+            nextSlide = 0;
+          else
+            return;
+        }
+        else{
+          nextSlide = slider.activeslide + 1;
+        }
+
+        show(nextSlide);
+
+
+      });
+
     }
+
+
 
 
 

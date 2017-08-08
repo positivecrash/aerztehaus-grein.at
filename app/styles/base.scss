@@ -18,6 +18,8 @@
 @import "blocks/head&foot";
 @import "blocks/pages";
 
+@import "pages/index";
+
 
 
 
@@ -69,6 +71,7 @@ body {
 
 .d-ib { display: inline-block; }
 .d-b { display: block; }
+img.d-b { max-width: 100%; }
 
 .align-m { vertical-align: middle; }
 
@@ -164,10 +167,14 @@ main{
 // }
 
 
-// .screen{
-//   position: relative;
-//   box-sizing: border-box;
-//   @include px-to-rem('padding-top', $vertical-rythm*3);
-//   @include px-to-rem('padding-bottom', $vertical-rythm*3);
-//   min-height: 100%;
-// }
+.screen{
+  position: relative;
+  box-sizing: border-box;
+  min-height: 100%;
+}
+
+.flexbox-center{
+  /* align content vertically */
+  display: flex;
+  align-items: center;
+}

@@ -43,14 +43,20 @@
 	@if $filename == a_down {
 		$char: "\E001";
 	}
-	@if $filename == cancel {
+	@if $filename == a_left {
 		$char: "\E002";
 	}
-	@if $filename == nav {
+	@if $filename == a_right {
 		$char: "\E003";
 	}
-	@if $filename == phone {
+	@if $filename == cancel {
 		$char: "\E004";
+	}
+	@if $filename == nav {
+		$char: "\E005";
+	}
+	@if $filename == phone {
+		$char: "\E006";
 	}
 
 	@return $char;
@@ -64,6 +70,14 @@
 
 .i-a_down {
 	@include icon(a_down);
+	@extend %icon-styles;
+}
+.i-a_left {
+	@include icon(a_left);
+	@extend %icon-styles;
+}
+.i-a_right {
+	@include icon(a_right);
 	@extend %icon-styles;
 }
 .i-cancel {

@@ -1,8 +1,10 @@
-@include font-face("DIN Pro", font-files("DINPro.woff","DINPro.ttf"), "DINPro.eot", 400);
-@include font-face("DIN Pro", font-files("DINPro-Medium.woff","DINPro-Medium.ttf"), "DINPro-Medium.eot", 600);
-@include font-face("DIN Pro", font-files("DINPro-Bold.woff","DINPro-Bold.ttf"), "DINPro-Bold.eot", 800);
+// @include font-face("DIN Pro", font-files("DINPro.woff","DINPro.woff2","DINPro.ttf"), "DINPro.eot", 400);
+// @include font-face("DIN Pro", font-files("DINPro-Medium.woff","DINPro-Medium.ttf"), "DINPro-Medium.eot", 600);
+@include font-face("DIN Pro", font-files("DINPro-Bold.woff","DINPro-Bold.woff2","DINPro-Bold.ttf"), "DINPro-Bold.eot", 800);
+@include font-face("DIN Pro Condensed", font-files("DINPro-Cond.woff","DINPro-Cond.woff2","DINPro-Cond.ttf"), "DINPro-Cond.eot", 400);
 
-@include font-face("DIN Pro Condensed", font-files("DINPro-Cond.woff","DINPro-Cond.ttf"), "DINPro-Cond.eot", 400);
+@include font-face("SignPainter HouseScript", font-files("SignPainter-HouseScript.woff","SignPainter-HouseScript.woff2","SignPainter-HouseScript.ttf"), "SignPainter-HouseScript.eot", 400);
+
 
 
 

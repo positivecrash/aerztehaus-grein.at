@@ -1,0 +1,286 @@
+.index{
+	overflow: hidden;
+
+	header[role='banner']{
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+	}
+
+	header[role='banner'], footer[role='contentinfo']{
+		z-index: 1000;
+	}
+
+	#index-slider-wrap{
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+
+.index-slider-text{
+	@include rem('width', 250);
+	@include rem('padding-bottom', 80);
+	position: absolute;
+	bottom: 80px;
+	left: $padding-base-side;
+
+	@include mobile(){
+		left: $padding-base-side-m;
+	}
+
+	h2 {
+		text-align: left;
+		@include rem('font-size', 47);
+		font-family: 'SignPainter HouseScript', sans-serif;
+		font-weight: 400;
+	}
+
+	p{
+		text-transform: uppercase;
+		color: $color-beige;
+		@include rem('font-size', 16);
+	}
+
+	.btn-lined{
+		@include rem('margin-top', 24);
+	}
+}
+
+
+.index-slider-img{
+	position: absolute;
+	bottom: 32px;
+	right: $padding-base-side;
+	@include rem('left', 300);
+	text-align: center;
+
+	@include mobile(){
+		right: $padding-base-side-m;
+	}
+
+	img{
+		@extend %inline-block;
+		// max-width: 100%;
+	}
+}
+
+
+.btn-lined{
+	display: block;
+
+	border-style: solid;
+	border-color: $color-text;
+	@include rem('border-width', 1);
+
+	text-align: center;
+	text-transform: uppercase;
+	color: $color-text;
+
+	@include rem('font-size', 18);
+	font-weight: 800;
+	font-family: 'DIN Pro', 'Open Sans', Helvetica, Arial, sans-serif;
+
+	@include rem('padding', 15, 30);
+}
+
+.js-slider-controls{
+	position: absolute;
+	bottom: 0;
+	padding: 0;
+	margin: 0;
+
+	&, a {
+		color: $color-beige;
+	}
+
+	@include rem('font-size', 36);
+
+	a{
+		@extend %inline-block;
+		@include rem('margin-left', 36);
+
+		&:first-child{
+			margin-left: 0;
+		}
+	}
+
+}
+
+
+
+/*INDEX SLIDES*/
+
+%slide_hide{
+	display: none;
+	opacity: 0;
+}
+
+.slide-0, .slide-1, .slide-2 {
+	opacity: 0;
+	animation: 0.2s fadeIn 0.2s ease forwards;
+}
+
+
+.slide_0{
+	.slide-1, .slide-2 { @extend %slide_hide; }
+}
+
+.slide_1{
+	.slide-0, .slide-2 { @extend %slide_hide; }
+}
+
+.slide_2{
+	.slide-0, .slide-1 { @extend %slide_hide; }
+
+	img.slide-2{
+		max-width: 100%;
+		margin-bottom: 120px;
+	}
+
+	img.slide-2-mob{
+		@extend %slide_hide;
+		max-width: 70%;
+		margin-bottom: 50px;
+	}
+}
+
+.slide_0{
+	img.slide-0{
+		height: 80vh;
+	}
+}
+
+.slide_1{
+	img.slide-1{
+		height: 60vh;
+	}
+}
+
+
+
+#team-1, #team-2, #team-3, #team-4{
+	position: absolute;
+	bottom: 0;
+}
+
+#team-1 { left: 0; z-index: 0; height: 66vh; }
+#team-2 { left: 214px; z-index: 1; }
+#team-3 { left: 520px; z-index: 1; height: 66vh; }
+#team-4 { left: 750px; z-index: 0; height: 72vh; }
+
+
+@media screen and (max-width:1340px){
+	#team-4{
+		display: none;
+	}
+}
+
+@media screen and (max-width:1076px){
+	#team-1, #team-2, #team-3{
+		display: none;
+	}
+
+	.slide_1{
+		#team-1, #team-2, #team-3{
+
+			&.slide-1_active{
+				display: inline-block;
+				position: static;
+				height: 76vh;
+			}
+		}
+	}
+
+	.slide_2{
+		img.slide-2{
+			display: none;
+		}
+
+		img.slide-2-mob{
+			display: inline-block;
+		}
+	}
+
+
+}
+
+
+@media screen and (max-height: 520px), screen and (max-width: 640px){
+	.index{
+		overflow: visible;
+	}
+
+	#index-slider-wrap{
+		/* align content vertically */
+  		display: flex;
+  		align-items: center;
+	}
+
+	.index-slider-text{
+		position: static;
+		display: block;
+		padding-bottom: 0;
+	}
+
+	.index-slider-img{
+		display: none;
+	}
+
+	.js-slider-controls{
+		position: static;
+	    margin-top: 30px;
+	}
+
+	#index-slider{
+		margin: 0 auto;
+		text-align: center;
+	}
+}
+
+
+/*end of INDEX SLIDES*/
+
+
+
+/*SLIDER*/
+.anyslide-loader{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -25px;
+    margin-left: -25px;
+
+    &:before{
+      content:"";
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      width: 100%;
+      height: 100%;
+      border-radius: 100%;
+      border: 5px solid transparent;
+      border-top-color: $color-beige;
+      border-left-color: $color-beige;
+      border-bottom-color: $color-beige;
+      animation: spin 1s infinite;
+    }
+  }
+
+
+@keyframes spin{
+  0%{
+    transform: rotate(0deg);
+  }
+
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+
+/*end of SLIDER*/
