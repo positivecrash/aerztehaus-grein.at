@@ -80,7 +80,7 @@
 
 	@include rem('font-size', 18);
 	font-weight: 800;
-	font-family: 'DIN Pro', 'Open Sans', Helvetica, Arial, sans-serif;
+	font-family: $font-family-second;
 
 	@include rem('padding', 15, 30);
 }

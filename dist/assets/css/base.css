@@ -83,9 +83,9 @@ a, a:hover, a:focus, a:visited {
 }
 @font-face {
   font-family: "DIN Pro Condensed";
-  src: url('../fonts/DINPro-Cond.eot?1502390367');
-  src: url('../fonts/DINPro-Cond.eot?&1502390367#iefix') format('embedded-opentype'), url('../fonts/DINPro-Cond.woff?1502390367') format('woff'), url('../fonts/DINPro-Cond.woff2?1502390367') format('woff2'), url('../fonts/DINPro-Cond.ttf?1501829694') format('truetype');
-  font-weight: 400;
+  src: url('../fonts/DINPro-CondMedium.eot?1502390368');
+  src: url('../fonts/DINPro-CondMedium.eot?&1502390368#iefix') format('embedded-opentype'), url('../fonts/DINPro-CondMedium.woff?1502390368') format('woff'), url('../fonts/DINPro-CondMedium.woff2?1502390368') format('woff2'), url('../fonts/DINPro-CondMedium.ttf?1501666190') format('truetype');
+  font-weight: 600;
 }
 @font-face {
   font-family: "SignPainter HouseScript";
@@ -1358,7 +1358,7 @@ footer[role='contentinfo'] a {
   font-size: 18px;
   font-size: 1.125rem;
   font-weight: 800;
-  font-family: 'DIN Pro', 'Open Sans', Helvetica, Arial, sans-serif;
+  font-family: "DIN Pro", "Open Sans", Helvetica, Arial, sans-serif;
   padding: 15px 30px;
   padding: 0.9375rem 1.875rem;
 }
@@ -1618,6 +1618,16 @@ footer[role='contentinfo'] a {
   }
 }
 /*end of SLIDER*/
+.inside h1 {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: "DIN Pro Condensed", "PT Sans", "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 46px;
+  font-size: 2.875rem;
+  margin: 30px 0px 60px;
+  margin: 1.875rem 0rem 3.75rem;
+}
+
 html, body {
   height: 100%;
   min-height: 100%;
