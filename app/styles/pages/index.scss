@@ -397,13 +397,19 @@
 		/* align content vertically */
   		display: flex;
   		align-items: center;
+
+  		.index-slider-text{
+			&, .slide-0, .slide-1, .slide-2{ position: static; }
+			.slide-0, .slide-1, .slide-2{ opacity: 0; display: none; transform: translateX(0); animation: none; }
+
+			display: block;
+			padding-bottom: 0;
+		}
+
+		.slide_0 .slide-0, .slide_1 .slide-1, .slide_2 .slide-2 { opacity: 1; display:block; }
 	}
 
-	.index-slider-text{
-		position: static;
-		display: block;
-		padding-bottom: 0;
-	}
+	
 
 	.index-slider-img{
 		display: none;
