@@ -77,20 +77,20 @@ a, a:hover, a:focus, a:visited {
 
 @font-face {
   font-family: "DIN Pro";
-  src: url('../fonts/DINPro-Bold.eot?1502191868');
-  src: url('../fonts/DINPro-Bold.eot?&1502191868#iefix') format('embedded-opentype'), url('../fonts/DINPro-Bold.woff?1502191868') format('woff'), url('../fonts/DINPro-Bold.woff2?1502191868') format('woff2'), url('../fonts/DINPro-Bold.ttf?1501666162') format('truetype');
+  src: url('../fonts/DINPro-Bold.eot?1502375423');
+  src: url('../fonts/DINPro-Bold.eot?&1502375423#iefix') format('embedded-opentype'), url('../fonts/DINPro-Bold.woff?1502375423') format('woff'), url('../fonts/DINPro-Bold.woff2?1502375423') format('woff2'), url('../fonts/DINPro-Bold.ttf?1501666162') format('truetype');
   font-weight: 800;
 }
 @font-face {
   font-family: "DIN Pro Condensed";
-  src: url('../fonts/DINPro-Cond.eot?1502191869');
-  src: url('../fonts/DINPro-Cond.eot?&1502191869#iefix') format('embedded-opentype'), url('../fonts/DINPro-Cond.woff?1502191869') format('woff'), url('../fonts/DINPro-Cond.woff2?1502191869') format('woff2'), url('../fonts/DINPro-Cond.ttf?1501829694') format('truetype');
+  src: url('../fonts/DINPro-Cond.eot?1502375424');
+  src: url('../fonts/DINPro-Cond.eot?&1502375424#iefix') format('embedded-opentype'), url('../fonts/DINPro-Cond.woff?1502375424') format('woff'), url('../fonts/DINPro-Cond.woff2?1502375424') format('woff2'), url('../fonts/DINPro-Cond.ttf?1501829694') format('truetype');
   font-weight: 400;
 }
 @font-face {
   font-family: "SignPainter HouseScript";
-  src: url('../fonts/SignPainter-HouseScript.eot?1502191871');
-  src: url('../fonts/SignPainter-HouseScript.eot?&1502191871#iefix') format('embedded-opentype'), url('../fonts/SignPainter-HouseScript.woff?1502191871') format('woff'), url('../fonts/SignPainter-HouseScript.woff2?1502191871') format('woff2'), url('../fonts/SignPainter-HouseScript.ttf?1440595482') format('truetype');
+  src: url('../fonts/SignPainter-HouseScript.eot?1502375426');
+  src: url('../fonts/SignPainter-HouseScript.eot?&1502375426#iefix') format('embedded-opentype'), url('../fonts/SignPainter-HouseScript.woff?1502375426') format('woff'), url('../fonts/SignPainter-HouseScript.woff2?1502375426') format('woff2'), url('../fonts/SignPainter-HouseScript.ttf?1440595482') format('truetype');
   font-weight: 400;
 }
 body {
@@ -131,8 +131,8 @@ li:last-child, p:last-child, blockquote:last-child {
 
 @font-face {
   font-family: "FontIcons";
-  src: url('../fonts/FontIcons.eot?1502191871');
-  src: url('../fonts/FontIcons.eot?&1502191871#iefix') format('embedded-opentype'), url('../fonts/FontIcons.woff?1502191871') format('woff'), url('../fonts/FontIcons.woff2?1502191871') format('woff2'), url('../fonts/FontIcons.svg?1502191868') format('svg'), url('../fonts/FontIcons.ttf?1502191868') format('truetype');
+  src: url('../fonts/FontIcons.eot?1502375426');
+  src: url('../fonts/FontIcons.eot?&1502375426#iefix') format('embedded-opentype'), url('../fonts/FontIcons.woff?1502375426') format('woff'), url('../fonts/FontIcons.woff2?1502375426') format('woff2'), url('../fonts/FontIcons.svg?1502375423') format('svg'), url('../fonts/FontIcons.ttf?1502375423') format('truetype');
 }
 .i-a_down, .i-a_left, .i-a_right, .i-cancel, .i-nav, .i-phone, #header-right-mob .dropdown__toggle .icon {
   font-family: "FontIcons";
@@ -202,6 +202,46 @@ li:last-child, p:last-child, blockquote:last-child {
   }
   100% {
     opacity: 0;
+  }
+}
+@-webkit-keyframes indexTextShift {
+  0% {
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes indexTextShift {
+  0% {
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@-webkit-keyframes indexTextShiftOut {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+  }
+}
+@keyframes indexTextShiftOut {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
   }
 }
 /* ===================================*/
@@ -1343,15 +1383,9 @@ footer[role='contentinfo'] a {
 }
 
 /*INDEX SLIDES*/
-.slide_0 .slide-1, .slide_0 .slide-2, .slide_1 .slide-0, .slide_1 .slide-2, .slide_2 .slide-0, .slide_2 .slide-1, .slide_2 img.slide-2-mob {
+.slide_2 img.slide-2-mob, .no-cssanimations .slide_0 .slide-1, .no-cssanimations .slide_0 .slide-2, .no-cssanimations .slide_1 .slide-0, .no-cssanimations .slide_1 .slide-2, .no-cssanimations .slide_2 .slide-0, .no-cssanimations .slide_2 .slide-1, .cssanimations .slide_0 .index-slider-img .slide-1, .cssanimations .slide_0 .index-slider-img .slide-2, .cssanimations .slide_1 .index-slider-img .slide-0, .cssanimations .slide_1 .index-slider-img .slide-2, .cssanimations .slide_2 .index-slider-img .slide-0, .cssanimations .slide_2 .index-slider-img .slide-1, .cssanimations .slide_0.prevslide_0 .slide-1, .cssanimations .slide_0.prevslide_0 .slide-2 {
   display: none;
   opacity: 0;
-}
-
-.slide-0, .slide-1, .slide-2 {
-  opacity: 0;
-  -webkit-animation: 0.2s fadeIn 0.2s ease forwards;
-          animation: 0.2s fadeIn 0.2s ease forwards;
 }
 
 .slide_2 img.slide-2 {
@@ -1371,6 +1405,70 @@ footer[role='contentinfo'] a {
   height: 60vh;
 }
 
+/*ANIMATIONS*/
+.no-cssanimations .slide_0 .slide-0, .no-cssanimations .slide_1 .slide-1, .no-cssanimations .slide_2 .slide-2 {
+  opacity: 1;
+}
+
+.cssanimations {
+  /*Basic animation while clicking slider*/
+  /*end of Basic animation while clicking slider*/
+  /*All other states for animation while clicking slider*/
+  /*end of All other states for animation while clicking slider*/
+}
+.cssanimations .index-slider-text .slide-0, .cssanimations .index-slider-text .slide-1, .cssanimations .index-slider-text .slide-2 {
+  position: absolute;
+  left: 0;
+  bottom: 80px;
+  bottom: 5rem;
+}
+.cssanimations .slide_0.prevslide_0 .index-slider-text .slide-0, .cssanimations .slide_1.prevslide_0 .index-slider-text .slide-1, .cssanimations .slide_2.prevslide_1 .index-slider-text .slide-2, .cssanimations .slide_0.prevslide_2 .index-slider-text .slide-0, .cssanimations .slide_0.prevslide_1 .index-slider-text .slide-0, .cssanimations .slide_1.prevslide_2 .index-slider-text .slide-1, .cssanimations .slide_2.prevslide_0 .index-slider-text .slide-2 {
+  opacity: 0;
+  -webkit-transform: translateX(-100px);
+          transform: translateX(-100px);
+  -webkit-animation: 0.6s fadeIn 1s ease forwards, 0.6s indexTextShift 1s ease-in-out forwards;
+          animation: 0.6s fadeIn 1s ease forwards, 0.6s indexTextShift 1s ease-in-out forwards;
+}
+.cssanimations .slide_1.prevslide_0 .index-slider-text .slide-0, .cssanimations .slide_2.prevslide_1 .index-slider-text .slide-1, .cssanimations .slide_0.prevslide_2 .index-slider-text .slide-2, .cssanimations .slide_0.prevslide_1 .index-slider-text .slide-1, .cssanimations .slide_1.prevslide_2 .index-slider-text .slide-2, .cssanimations .slide_2.prevslide_0 .index-slider-text .slide-0 {
+  -webkit-animation: 0.6s fadeOut 0.4s ease forwards, 0.6s indexTextShiftOut 0.4s ease-in-out forwards;
+          animation: 0.6s fadeOut 0.4s ease forwards, 0.6s indexTextShiftOut 0.4s ease-in-out forwards;
+}
+.cssanimations .slide_1.prevslide_1 .index-slider-text .slide-1, .cssanimations .slide_2.prevslide_2 .index-slider-text .slide-2 {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+.cssanimations .slide_0 .index-slider-img .slide-0, .cssanimations .slide_1 .index-slider-img .slide-1, .cssanimations .slide_2 .index-slider-img .slide-2 {
+  opacity: 0;
+  -webkit-animation: 0.4s fadeIn 0.2s ease forwards;
+          animation: 0.4s fadeIn 0.2s ease forwards;
+}
+.cssanimations .slide_1.prevslide_0 .index-slider-text .slide-2 {
+  opacity: 0;
+}
+.cssanimations .slide_2.prevslide_1 .index-slider-text .slide-0 {
+  opacity: 0;
+}
+.cssanimations .slide_0.prevslide_2 .index-slider-text .slide-1 {
+  opacity: 0;
+}
+.cssanimations .slide_0.prevslide_1 .index-slider-text .slide-2 {
+  opacity: 0;
+}
+.cssanimations .slide_1.prevslide_2 .index-slider-text .slide-0 {
+  opacity: 0;
+}
+.cssanimations .slide_1.prevslide_1 .index-slider-text .slide-0, .cssanimations .slide_1.prevslide_1 .index-slider-text .slide-2 {
+  opacity: 0;
+}
+.cssanimations .slide_2.prevslide_0 .index-slider-text .slide-1 {
+  opacity: 0;
+}
+.cssanimations .slide_2.prevslide_2 .index-slider-text .slide-0, .cssanimations .slide_2.prevslide_2 .index-slider-text .slide-1 {
+  opacity: 0;
+}
+
+/*end of ANIMATIONS*/
 #team-1, #team-2, #team-3, #team-4 {
   position: absolute;
   bottom: 0;
@@ -1521,9 +1619,6 @@ body {
   background-color: #F5F5F5;
   position: relative;
   color: #231F20;
-  opacity: 0;
-  -webkit-animation: 0.4s fadeIn ease-in forwards;
-          animation: 0.4s fadeIn ease-in forwards;
 }
 
 /*====== BASICS ======*/

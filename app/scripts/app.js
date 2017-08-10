@@ -92,7 +92,7 @@ jQuery(document).ready(function($){
 		singleContainer: true,
 		loadFirst: 'img',
 		anchorSupport: false,
-		autoplay: true,
+		// autoplay: true,
 		autoHover: false,
 		loop: true
 	});

@@ -193,7 +193,9 @@
 
     var show = function(index) {
 
+
       setActiveIndex(index);
+
 
       if ( slider.hascontent ){
         showContent(index);
@@ -508,11 +510,13 @@
      
       slider.controls.find(slider.config.controlsPrev).on('click', function(e){
 
+
         e.preventDefault();
         e.stopPropagation();
 
-        console.log('prev');
-
+        // pause autoplay
+        if (slider.config.autoplay)
+          slider.autoplayPaused = true;
 
         var prevSlide = 0;
 
@@ -530,6 +534,10 @@
 
         show(prevSlide);
 
+        // start autoplay again, if there is need
+        if (slider.config.autoplay && slider.autoplayPaused)
+            slider.autoplayPaused = null;
+
 
       });
 
@@ -540,7 +548,9 @@
         e.preventDefault();
         e.stopPropagation();
 
-        console.log('next');
+        // pause autoplay
+        if (slider.config.autoplay)
+          slider.autoplayPaused = true;
 
         var nextSlide = 0;
 
@@ -556,6 +566,10 @@
         }
 
         show(nextSlide);
+
+        // start autoplay again, if there is need
+        if (slider.config.autoplay && slider.autoplayPaused)
+            slider.autoplayPaused = null;
 
 
       });

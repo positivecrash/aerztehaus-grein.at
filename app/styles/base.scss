@@ -41,10 +41,16 @@ body {
 
   position: relative;
   color: $color-text;
-
-  opacity: 0;
-  animation: 0.4s fadeIn ease-in forwards;
 }
+
+// #{$modernizr-cssanimations}{
+
+//   body{
+//     opacity: 0;
+//     animation: 0.4s fadeIn ease-in forwards;
+//   }
+  
+// }
 
 
 

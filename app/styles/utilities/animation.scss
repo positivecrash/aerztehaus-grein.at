@@ -18,7 +18,21 @@
 }
 
 
-// #{$modernizr-cssanimations} .animation-jello {
-//   animation: fadeIn .5s ease-in forwards, jello 1.5s forwards;
-//   transform-origin: center;
-// }
+@keyframes indexTextShift {
+  0% {
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
+@keyframes indexTextShiftOut {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100px);
+  }
+}
