@@ -180,10 +180,14 @@ section.sec{
 		padding: 30px;
 		border: 1px solid $color-gray-light;
 	}
-}
 
-.page-blue{
-	section.sec{
+	.avatar{
+		border: 1px solid $color-gray-light;
+		min-height: 180px;
+	}
+
+
+	&.sec-blue{
 		.sec-head{
 			background-color: $color-blue-light;
 		}
@@ -191,37 +195,41 @@ section.sec{
 		.sec-body{
 			border-color: $color-blue-light;
 		}
-	}
-}
 
-.page-beige{
-	section.sec{
-		.sec-head{
-			background-color: $color-beige-light;
-		}
-
-		.sec-body{
-			border-color: $color-beige-light;
-		}
-	}
-}
-
-
-.page-doctor{
-	.card .card-left img{
-		border: 1px solid rgba($color-blue-light, 0.7);
-		min-height: 180px;
-	}
-
-	&.page-blue{
 		.card .card-left img{
+			border-color: rgba($color-blue-light, 0.7);
+		}
+
+		.card .card-left img{
+			border-color: rgba($color-blue-light, 0.7);
+		}
+
+		.card-content-left .d-t-cell{
 			border-color: rgba($color-blue-light, 0.7);
 		}
 	}
 
-	.card-content-left .d-t-cell{
-		border-color: rgba($color-blue-light, 0.7);
+	&.sec-beige{
+		.sec-head{
+			background-color: $color-beige-light;
+		}
+
+		.card .card-left img{
+			border-color: rgba($color-beige-light, 0.7);
+		}
+
+		.card .card-left img{
+			border-color: rgba($color-beige-light, 0.7);
+		}
+
+		.card-content-left .d-t-cell{
+			border-color: rgba($color-beige-light, 0.7);
+		}
 	}
+
+
 }
+
+
 
 /*end of COLORED SECTIONS*/

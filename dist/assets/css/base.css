@@ -1001,6 +1001,9 @@ header[role='banner'] .setw {
   display: table;
   width: 100%;
 }
+header[role='banner'] li {
+  margin-bottom: 0;
+}
 
 /*======== BASIC COLUMNS =========*/
 #header-logo {
@@ -1786,30 +1789,36 @@ section.sec .sec-body {
   padding: 30px;
   border: 1px solid #EDEDED;
 }
-
-.page-blue section.sec .sec-head {
-  background-color: #E4EBF5;
-}
-.page-blue section.sec .sec-body {
-  border-color: #E4EBF5;
-}
-
-.page-beige section.sec .sec-head {
-  background-color: #D8D1C0;
-}
-.page-beige section.sec .sec-body {
-  border-color: #D8D1C0;
-}
-
-.page-doctor .card .card-left img {
-  border: 1px solid rgba(228, 235, 245, 0.7);
+section.sec .avatar {
+  border: 1px solid #EDEDED;
   min-height: 180px;
 }
-.page-doctor.page-blue .card .card-left img {
+section.sec.sec-blue .sec-head {
+  background-color: #E4EBF5;
+}
+section.sec.sec-blue .sec-body {
+  border-color: #E4EBF5;
+}
+section.sec.sec-blue .card .card-left img {
   border-color: rgba(228, 235, 245, 0.7);
 }
-.page-doctor .card-content-left .d-t-cell {
+section.sec.sec-blue .card .card-left img {
   border-color: rgba(228, 235, 245, 0.7);
+}
+section.sec.sec-blue .card-content-left .d-t-cell {
+  border-color: rgba(228, 235, 245, 0.7);
+}
+section.sec.sec-beige .sec-head {
+  background-color: #D8D1C0;
+}
+section.sec.sec-beige .card .card-left img {
+  border-color: rgba(216, 209, 192, 0.7);
+}
+section.sec.sec-beige .card .card-left img {
+  border-color: rgba(216, 209, 192, 0.7);
+}
+section.sec.sec-beige .card-content-left .d-t-cell {
+  border-color: rgba(216, 209, 192, 0.7);
 }
 
 /*end of COLORED SECTIONS*/

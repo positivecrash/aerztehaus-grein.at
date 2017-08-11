@@ -1,43 +1,37 @@
 extends extends/layout.jade
 
 block html
-	- var pageTitle = 'Team | Ärztehaus Grein – Dr. Huemer'
+	- var pageTitle = 'Leistungen | Ärztehaus Grein – Dr. Huemer'
 	//- - var screen = true
 	- var bodyclass = 'inside'
 
 block content
 	main(role="main").setw
-		h1 Team
+		h1 Leistungen
 
-		section.sec.sec-blue
+		section.sec
 			.sec-head
-				h2 Dr. Huemer Thomas
+				h2 Allgemeinmedizin
 				.icon.i-sign
 
 			.sec-body
 				.card
 					.card-left
-						img.avatar(alt="Dr. Huemer Thomas foto", src="assets/i/tmp/Dr-Huemer-Tomas.png")
+						img(alt="Allgemeinmedizin", src="assets/i/tmp/Dr-Huemer-Tomas.png")
 					.card-content
 						.d-t.fullw
 							.card-content-left
 								.d-t.fullw
 									.d-t-row
-										.d-t-cell Fach:
-										.d-t-cell Arzt für Allgemeinmedizin
-									.d-t-row
-										.d-t-cell Geburtsdatum:
-										.d-t-cell 16.12.59
-									.d-t-row
-										.d-t-cell Berufserfahrung:
-										.d-t-cell Medizinstudium Uni Wien; LKKH Linz (Landeskinderkrankenhaus); KH Amstetten
+										.d-t-cell Beschreibung:
+										.d-t-cell Als Allgemeinarzt bin ich in der Regel der erste Ansprechpartner bei allen Gesundheitsproblemen und beschäftige mich mit Vorbeugung (Prävention), Erkennung (Diagnose), Behandlung (Therapie) und Nachsorge von Krankheiten und Verletzungen meiner Patientinnen und Patienten.
 							.card-content-right
 								a.card-print(href="#"): .i-print
 								a.card-email(href="#"): .i-email
 
 
 
-		section.sec.sec-blue
+		section.sec
 			.sec-head
 				h2 Pauckner Monika
 				.icon.i-sign
@@ -45,7 +39,7 @@ block content
 			.sec-body
 				.card
 					.card-left
-						img.avatar(alt="Pauckner Monika foto", src="assets/i/tmp/nophoto_girl.png")
+						img(alt="Pauckner Monika foto", src="assets/i/tmp/nophoto_girl.png")
 					.card-content
 						.d-t.fullw
 							.card-content-left
@@ -67,7 +61,7 @@ block content
 								a.card-email(href="#"): .i-email
 
 
-		section.sec.sec-blue
+		section.sec
 			.sec-head
 				h2 Pauckner Monika
 				.icon.i-sign
@@ -75,7 +69,7 @@ block content
 			.sec-body
 				.card
 					.card-left
-						img.avatar(alt="Pauckner Monika foto", src="assets/i/tmp/nophoto_boy.png")
+						img(alt="Pauckner Monika foto", src="assets/i/tmp/nophoto_boy.png")
 					.card-content
 						.d-t.fullw
 							.card-content-left
