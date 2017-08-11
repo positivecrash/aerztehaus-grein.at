@@ -19,16 +19,9 @@
 @import "blocks/pages";
 
 @import "pages/index";
-@import "pages/list";
+@import "pages/inside";
 
 
-
-
-
-html, body{
-  height: 100%;
-  min-height: 100%;
-}
 
 
 html {
@@ -54,6 +47,11 @@ body {
 // }
 
 
+.inside main[role="main"]{
+  padding-bottom: 145px;
+}
+
+
 
 
 
@@ -71,8 +69,12 @@ body {
 .d-t {
   display: table;
 
-  & > *{
+  & > *, .d-t-cell{
     display: table-cell;
+  }
+
+  .d-t-row{
+    display: table-row;
   }
 }
 
@@ -122,14 +124,6 @@ img.d-b { max-width: 100%; }
     }
   }
 }
-
-
-
-
-main{
-  padding-bottom: 0;
-}
-
 
 
 

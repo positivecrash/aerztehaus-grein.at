@@ -1,0 +1,152 @@
+.inside{
+	h1{
+		text-transform: uppercase;
+		font-weight: 600;
+		font-family: $font-family-third;
+		@include rem('font-size', 46);
+
+		@include rem('margin', 30, 0, 60);
+	}
+}
+
+
+
+/*COLOMENUD CARDS*/
+.card{
+	@extend %floating-fix;
+
+	.card-left{
+		float: left;
+		width: 180px;
+
+		img{
+			display: block;
+			max-width: 100%;
+			margin: 0 auto;
+		}
+	}
+
+	.card-content{
+		margin-left: 212px;
+	}
+
+	.card-content-left, .card-content-right{
+		vertical-align: top;
+	}
+
+	.card-content-left{
+		width: 95%;
+
+		.d-t-cell{
+			border-bottom: 1px solid rgba($color-gray-light, 0.7);
+			padding: 8px 0;
+
+			&:first-child{
+				@include rem('width', 136);
+				color: $color-beige;
+			}
+		}
+
+		.d-t-row:last-child .d-t-cell{
+			border: 0;
+		}
+	}
+
+	.card-content-right{
+		text-align: right;
+		padding-left: 30px;
+
+		a{
+			color: $color-text;
+			display: block;
+			margin-bottom: 20px;
+			@include rem('font-size', 34);
+			text-align: center;
+		}
+
+		.i-email{
+			@include rem('font-size', 25);
+		}
+	}
+}
+/*end of COLOMENUD CARDS*/
+
+
+/*COLORED SECTIONS*/
+
+section.sec{
+	background-color: #fff;
+	padding: 8px;
+	margin-bottom: 34px;
+
+	&:last-child{
+		margin-bottom: 0;
+	}
+
+	.sec-head{
+		text-align: center;
+		padding: 16px 120px;
+		background-color: $color-gray-light;
+		position: relative;
+		color: #5A5F67;
+		margin-bottom: 8px;
+
+		.icon{
+			position: absolute;
+			top: 50%;
+			right: 8px;
+
+			font-size: 24px;
+			margin-top: -12px;
+		}
+	}
+
+	.sec-body{
+		padding: 30px;
+		border: 1px solid $color-gray-light;
+	}
+}
+
+.page-blue{
+	section.sec{
+		.sec-head{
+			background-color: $color-blue-light;
+		}
+
+		.sec-body{
+			border-color: $color-blue-light;
+		}
+	}
+}
+
+.page-beige{
+	section.sec{
+		.sec-head{
+			background-color: $color-beige-light;
+		}
+
+		.sec-body{
+			border-color: $color-beige-light;
+		}
+	}
+}
+
+
+.page-doctor{
+	.card .card-left img{
+		border: 1px solid rgba($color-blue-light, 0.7);
+		min-height: 180px;
+	}
+
+	&.page-blue{
+		.card .card-left img{
+			border-color: rgba($color-blue-light, 0.7);
+		}
+	}
+
+	.card-content-left .d-t-cell{
+		border-color: rgba($color-blue-light, 0.7);
+	}
+}
+
+/*end of COLORED SECTIONS*/

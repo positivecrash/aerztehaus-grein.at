@@ -21,6 +21,12 @@
 }
 
 
+h2 {
+  @include rem('font-size', 24);
+  font-weight: 300;
+}
+
+
 
 
 
@@ -57,7 +63,7 @@ ul, ol {
 }
 
 li, p, blockquote{
-  // margin-bottom: ;
+  @include rem('margin-bottom', 20);
 
   &:last-child{
   	margin-bottom: 0;

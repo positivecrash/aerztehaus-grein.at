@@ -56,7 +56,7 @@ input, select {
   *display: inline;
 }
 
-.f-zoom, .col-3-wrap, .col-2-wrap {
+.card, .f-zoom, .col-3-wrap, .col-2-wrap {
   /*fix floating problems*/
   overflow: hidden;
   *zoom: 1;
@@ -77,20 +77,20 @@ a, a:hover, a:focus, a:visited {
 
 @font-face {
   font-family: "DIN Pro";
-  src: url('../fonts/DINPro-Bold.eot?1502390366');
-  src: url('../fonts/DINPro-Bold.eot?&1502390366#iefix') format('embedded-opentype'), url('../fonts/DINPro-Bold.woff?1502390366') format('woff'), url('../fonts/DINPro-Bold.woff2?1502390366') format('woff2'), url('../fonts/DINPro-Bold.ttf?1501666162') format('truetype');
+  src: url('../fonts/DINPro-Bold.eot?1502450681');
+  src: url('../fonts/DINPro-Bold.eot?&1502450681#iefix') format('embedded-opentype'), url('../fonts/DINPro-Bold.woff?1502450681') format('woff'), url('../fonts/DINPro-Bold.woff2?1502450681') format('woff2'), url('../fonts/DINPro-Bold.ttf?1501666162') format('truetype');
   font-weight: 800;
 }
 @font-face {
   font-family: "DIN Pro Condensed";
-  src: url('../fonts/DINPro-CondMedium.eot?1502390368');
-  src: url('../fonts/DINPro-CondMedium.eot?&1502390368#iefix') format('embedded-opentype'), url('../fonts/DINPro-CondMedium.woff?1502390368') format('woff'), url('../fonts/DINPro-CondMedium.woff2?1502390368') format('woff2'), url('../fonts/DINPro-CondMedium.ttf?1501666190') format('truetype');
+  src: url('../fonts/DINPro-CondMedium.eot?1502450684');
+  src: url('../fonts/DINPro-CondMedium.eot?&1502450684#iefix') format('embedded-opentype'), url('../fonts/DINPro-CondMedium.woff?1502450684') format('woff'), url('../fonts/DINPro-CondMedium.woff2?1502450684') format('woff2'), url('../fonts/DINPro-CondMedium.ttf?1501666190') format('truetype');
   font-weight: 600;
 }
 @font-face {
   font-family: "SignPainter HouseScript";
-  src: url('../fonts/SignPainter-HouseScript.eot?1502390369');
-  src: url('../fonts/SignPainter-HouseScript.eot?&1502390369#iefix') format('embedded-opentype'), url('../fonts/SignPainter-HouseScript.woff?1502390369') format('woff'), url('../fonts/SignPainter-HouseScript.woff2?1502390369') format('woff2'), url('../fonts/SignPainter-HouseScript.ttf?1440595482') format('truetype');
+  src: url('../fonts/SignPainter-HouseScript.eot?1502450684');
+  src: url('../fonts/SignPainter-HouseScript.eot?&1502450684#iefix') format('embedded-opentype'), url('../fonts/SignPainter-HouseScript.woff?1502450684') format('woff'), url('../fonts/SignPainter-HouseScript.woff2?1502450684') format('woff2'), url('../fonts/SignPainter-HouseScript.ttf?1440595482') format('truetype');
   font-weight: 400;
 }
 body {
@@ -101,6 +101,12 @@ body {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   word-spacing: normal;
   letter-spacing: 0;
+}
+
+h2 {
+  font-size: 24px;
+  font-size: 1.5rem;
+  font-weight: 300;
 }
 
 /*=== TEXT COLORS ====*/
@@ -125,16 +131,20 @@ ul, ol {
   margin-left: 15px;
 }
 
+li, p, blockquote {
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+}
 li:last-child, p:last-child, blockquote:last-child {
   margin-bottom: 0;
 }
 
 @font-face {
   font-family: "FontIcons";
-  src: url('../fonts/FontIcons.eot?1502390369');
-  src: url('../fonts/FontIcons.eot?&1502390369#iefix') format('embedded-opentype'), url('../fonts/FontIcons.woff?1502390369') format('woff'), url('../fonts/FontIcons.woff2?1502390369') format('woff2'), url('../fonts/FontIcons.svg?1502390366') format('svg'), url('../fonts/FontIcons.ttf?1502390366') format('truetype');
+  src: url('../fonts/FontIcons.eot?1502450684');
+  src: url('../fonts/FontIcons.eot?&1502450684#iefix') format('embedded-opentype'), url('../fonts/FontIcons.woff?1502450684') format('woff'), url('../fonts/FontIcons.woff2?1502450684') format('woff2'), url('../fonts/FontIcons.svg?1502450681') format('svg'), url('../fonts/FontIcons.ttf?1502450681') format('truetype');
 }
-.i-a_down, .i-a_left, .i-a_right, .i-cancel, .i-nav, .i-phone, #header-right-mob .dropdown__toggle .icon {
+.i-a_down, .i-a_left, .i-a_right, .i-cancel, .i-email, .i-nav, .i-phone, .i-print, .i-sign, #header-right-mob .dropdown__toggle .icon {
   font-family: "FontIcons";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -163,12 +173,24 @@ li:last-child, p:last-child, blockquote:last-child {
   content: "";
 }
 
-.i-nav:before {
+.i-email:before {
   content: "";
 }
 
-.i-phone:before {
+.i-nav:before {
   content: "";
+}
+
+.i-phone:before {
+  content: "";
+}
+
+.i-print:before {
+  content: "";
+}
+
+.i-sign:before {
+  content: "";
 }
 
 @-webkit-keyframes fadeIn {
@@ -1203,7 +1225,7 @@ header[role='banner'] .setw {
   border-color: #FF1D1D;
 }
 #header-mob-phone .dropdown__toggle .icon:before {
-  content: "";
+  content: "";
 }
 #header-mob-phone .dropdown__content {
   background-color: #fff;
@@ -1222,7 +1244,7 @@ header[role='banner'] .setw {
   font-size: 1.25rem;
 }
 #header-mob-nav .dropdown__toggle .icon:before {
-  content: "";
+  content: "";
 }
 #header-mob-nav .dropdown__content {
   background-color: #8D7E58;
@@ -1628,11 +1650,110 @@ footer[role='contentinfo'] a {
   margin: 1.875rem 0rem 3.75rem;
 }
 
-html, body {
-  height: 100%;
-  min-height: 100%;
+/*COLOMENUD CARDS*/
+.card .card-left {
+  float: left;
+  width: 180px;
+}
+.card .card-left img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.card .card-content {
+  margin-left: 212px;
+}
+.card .card-content-left, .card .card-content-right {
+  vertical-align: top;
+}
+.card .card-content-left {
+  width: 95%;
+}
+.card .card-content-left .d-t-cell {
+  border-bottom: 1px solid rgba(237, 237, 237, 0.7);
+  padding: 8px 0;
+}
+.card .card-content-left .d-t-cell:first-child {
+  width: 136px;
+  width: 8.5rem;
+  color: #8D7E58;
+}
+.card .card-content-left .d-t-row:last-child .d-t-cell {
+  border: 0;
+}
+.card .card-content-right {
+  text-align: right;
+  padding-left: 30px;
+}
+.card .card-content-right a {
+  color: #231F20;
+  display: block;
+  margin-bottom: 20px;
+  font-size: 34px;
+  font-size: 2.125rem;
+  text-align: center;
+}
+.card .card-content-right .i-email {
+  font-size: 25px;
+  font-size: 1.5625rem;
 }
 
+/*end of COLOMENUD CARDS*/
+/*COLORED SECTIONS*/
+section.sec {
+  background-color: #fff;
+  padding: 8px;
+  margin-bottom: 34px;
+}
+section.sec:last-child {
+  margin-bottom: 0;
+}
+section.sec .sec-head {
+  text-align: center;
+  padding: 16px 120px;
+  background-color: #EDEDED;
+  position: relative;
+  color: #5A5F67;
+  margin-bottom: 8px;
+}
+section.sec .sec-head .icon {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  font-size: 24px;
+  margin-top: -12px;
+}
+section.sec .sec-body {
+  padding: 30px;
+  border: 1px solid #EDEDED;
+}
+
+.page-blue section.sec .sec-head {
+  background-color: #E4EBF5;
+}
+.page-blue section.sec .sec-body {
+  border-color: #E4EBF5;
+}
+
+.page-beige section.sec .sec-head {
+  background-color: #D8D1C0;
+}
+.page-beige section.sec .sec-body {
+  border-color: #D8D1C0;
+}
+
+.page-doctor .card .card-left img {
+  border: 1px solid rgba(228, 235, 245, 0.7);
+  min-height: 180px;
+}
+.page-doctor.page-blue .card .card-left img {
+  border-color: rgba(228, 235, 245, 0.7);
+}
+.page-doctor .card-content-left .d-t-cell {
+  border-color: rgba(228, 235, 245, 0.7);
+}
+
+/*end of COLORED SECTIONS*/
 html {
   position: relative;
   font-size: 100%;
@@ -1642,6 +1763,10 @@ body {
   background-color: #F5F5F5;
   position: relative;
   color: #231F20;
+}
+
+.inside main[role="main"] {
+  padding-bottom: 145px;
 }
 
 /*====== BASICS ======*/
@@ -1656,8 +1781,11 @@ body {
 .d-t {
   display: table;
 }
-.d-t > * {
+.d-t > *, .d-t .d-t-cell {
   display: table-cell;
+}
+.d-t .d-t-row {
+  display: table-row;
 }
 
 .d-ib {
@@ -1710,10 +1838,6 @@ img.d-b {
     margin-bottom: 0;
   }
 }
-main {
-  padding-bottom: 0;
-}
-
 .dropdown {
   position: relative;
 }
