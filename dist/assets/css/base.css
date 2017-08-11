@@ -1678,6 +1678,22 @@ footer[role='contentinfo'] a {
   width: 8.5rem;
   color: #8D7E58;
 }
+@media screen and (max-width: 927px) {
+  .card .card-content-left .d-t-cell {
+    display: block;
+  }
+  .card .card-content-left .d-t-cell, .card .card-content-left .d-t-cell:first-child {
+    width: 100%;
+  }
+  .card .card-content-left .d-t-cell:first-child {
+    border-bottom: 0;
+    padding-top: 20px;
+    padding-bottom: 0;
+  }
+  .card .card-content-left .d-t-cell:last-child {
+    padding-bottom: 20px;
+  }
+}
 .card .card-content-left .d-t-row:last-child .d-t-cell {
   border: 0;
 }
@@ -1696,6 +1712,36 @@ footer[role='contentinfo'] a {
 .card .card-content-right .i-email {
   font-size: 25px;
   font-size: 1.5625rem;
+}
+@media screen and (max-width: 600px) {
+  .card .card-left {
+    float: none;
+    width: 100%;
+    display: block;
+  }
+  .card .card-left img {
+    max-width: 180px;
+  }
+  .card .card-content {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+  .card .card-content-left, .card .card-content-right {
+    display: block;
+  }
+  .card .card-content-left {
+    width: 100%;
+  }
+  .card .card-content-left .d-t-row {
+    display: block;
+  }
+  .card .card-content-right {
+    padding-left: 0;
+    margin-top: 20px;
+  }
+  .card a.card-print {
+    display: none;
+  }
 }
 
 /*end of COLOMENUD CARDS*/
@@ -1716,12 +1762,25 @@ section.sec .sec-head {
   color: #5A5F67;
   margin-bottom: 8px;
 }
+@media screen and (max-width: 600px) {
+  section.sec .sec-head {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
 section.sec .sec-head .icon {
   position: absolute;
   top: 50%;
   right: 8px;
   font-size: 24px;
   margin-top: -12px;
+}
+@media screen and (max-width: 600px) {
+  section.sec .sec-head .icon {
+    position: static;
+    display: block;
+    margin-top: 10px;
+  }
 }
 section.sec .sec-body {
   padding: 30px;
