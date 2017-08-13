@@ -1,0 +1,14 @@
+extends extends/layout.jade
+
+block html
+	- var pageTitle = 'Intro | Ärztehaus Grein – Dr. Huemer'
+	- var screen = true
+	- var bodyclass = 'inside'
+
+block content
+	#intro.setw.screen
+		#intro-content
+			img(alt="", src="assets/i/logo-intro.png", srcset="assets/i/logo-intro@2x.png")
+			img#intro-sign(alt="", src="assets/i/sign.gif")
+			img#intro-title(alt="", src="assets/i/logo-title.png", srcset="assets/i/logo-title@2x.png")
+	

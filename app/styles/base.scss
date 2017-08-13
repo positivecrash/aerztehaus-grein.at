@@ -20,12 +20,18 @@
 
 @import "pages/index";
 @import "pages/inside";
+@import "pages/intro";
 
 
+
+
+html, body{
+  height: 100%;
+  position: relative
+}
 
 
 html {
-  position: relative;
   font-size: 100%;
 }
 
@@ -33,7 +39,6 @@ body {
   @extend %font_base;
   background-color: $color-gray-1;
 
-  position: relative;
   color: $color-text;
 }
 

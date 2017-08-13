@@ -77,20 +77,20 @@ a, a:hover, a:focus, a:visited {
 
 @font-face {
   font-family: "DIN Pro";
-  src: url('../fonts/DINPro-Bold.eot?1502450681');
-  src: url('../fonts/DINPro-Bold.eot?&1502450681#iefix') format('embedded-opentype'), url('../fonts/DINPro-Bold.woff?1502450681') format('woff'), url('../fonts/DINPro-Bold.woff2?1502450681') format('woff2'), url('../fonts/DINPro-Bold.ttf?1501666162') format('truetype');
+  src: url('../fonts/DINPro-Bold.eot?1502657829');
+  src: url('../fonts/DINPro-Bold.eot?&1502657829#iefix') format('embedded-opentype'), url('../fonts/DINPro-Bold.woff?1502657829') format('woff'), url('../fonts/DINPro-Bold.woff2?1502657829') format('woff2'), url('../fonts/DINPro-Bold.ttf?1501666162') format('truetype');
   font-weight: 800;
 }
 @font-face {
   font-family: "DIN Pro Condensed";
-  src: url('../fonts/DINPro-CondMedium.eot?1502450684');
-  src: url('../fonts/DINPro-CondMedium.eot?&1502450684#iefix') format('embedded-opentype'), url('../fonts/DINPro-CondMedium.woff?1502450684') format('woff'), url('../fonts/DINPro-CondMedium.woff2?1502450684') format('woff2'), url('../fonts/DINPro-CondMedium.ttf?1501666190') format('truetype');
+  src: url('../fonts/DINPro-CondMedium.eot?1502657832');
+  src: url('../fonts/DINPro-CondMedium.eot?&1502657832#iefix') format('embedded-opentype'), url('../fonts/DINPro-CondMedium.woff?1502657832') format('woff'), url('../fonts/DINPro-CondMedium.woff2?1502657832') format('woff2'), url('../fonts/DINPro-CondMedium.ttf?1501666190') format('truetype');
   font-weight: 600;
 }
 @font-face {
   font-family: "SignPainter HouseScript";
-  src: url('../fonts/SignPainter-HouseScript.eot?1502450684');
-  src: url('../fonts/SignPainter-HouseScript.eot?&1502450684#iefix') format('embedded-opentype'), url('../fonts/SignPainter-HouseScript.woff?1502450684') format('woff'), url('../fonts/SignPainter-HouseScript.woff2?1502450684') format('woff2'), url('../fonts/SignPainter-HouseScript.ttf?1440595482') format('truetype');
+  src: url('../fonts/SignPainter-HouseScript.eot?1502657832');
+  src: url('../fonts/SignPainter-HouseScript.eot?&1502657832#iefix') format('embedded-opentype'), url('../fonts/SignPainter-HouseScript.woff?1502657832') format('woff'), url('../fonts/SignPainter-HouseScript.woff2?1502657832') format('woff2'), url('../fonts/SignPainter-HouseScript.ttf?1440595482') format('truetype');
   font-weight: 400;
 }
 body {
@@ -141,8 +141,8 @@ li:last-child, p:last-child, blockquote:last-child {
 
 @font-face {
   font-family: "FontIcons";
-  src: url('../fonts/FontIcons.eot?1502450684');
-  src: url('../fonts/FontIcons.eot?&1502450684#iefix') format('embedded-opentype'), url('../fonts/FontIcons.woff?1502450684') format('woff'), url('../fonts/FontIcons.woff2?1502450684') format('woff2'), url('../fonts/FontIcons.svg?1502450681') format('svg'), url('../fonts/FontIcons.ttf?1502450681') format('truetype');
+  src: url('../fonts/FontIcons.eot?1502657832');
+  src: url('../fonts/FontIcons.eot?&1502657832#iefix') format('embedded-opentype'), url('../fonts/FontIcons.woff?1502657832') format('woff'), url('../fonts/FontIcons.woff2?1502657832') format('woff2'), url('../fonts/FontIcons.svg?1502657829') format('svg'), url('../fonts/FontIcons.ttf?1502657829') format('truetype');
 }
 .i-a_down, .i-a_left, .i-a_right, .i-cancel, .i-email, .i-nav, .i-phone, .i-print, .i-sign, #header-right-mob .dropdown__toggle .icon {
   font-family: "FontIcons";
@@ -1822,8 +1822,28 @@ section.sec.sec-beige .card-content-left .d-t-cell {
 }
 
 /*end of COLORED SECTIONS*/
-html {
+#intro-content {
+  max-width: 247px;
+  margin: 0 auto;
+}
+#intro-content img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+}
+#intro-content #intro-title {
+  max-width: 161px;
+}
+#intro-content #intro-sign {
+  max-width: 195px;
+}
+
+html, body {
+  height: 100%;
   position: relative;
+}
+
+html {
   font-size: 100%;
 }
 
