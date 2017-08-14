@@ -77,20 +77,20 @@ a, a:hover, a:focus, a:visited {
 
 @font-face {
   font-family: "DIN Pro";
-  src: url('../fonts/DINPro-Bold.eot?1502657829');
-  src: url('../fonts/DINPro-Bold.eot?&1502657829#iefix') format('embedded-opentype'), url('../fonts/DINPro-Bold.woff?1502657829') format('woff'), url('../fonts/DINPro-Bold.woff2?1502657829') format('woff2'), url('../fonts/DINPro-Bold.ttf?1501666162') format('truetype');
+  src: url('../fonts/DINPro-Bold.eot?1502701994');
+  src: url('../fonts/DINPro-Bold.eot?&1502701994#iefix') format('embedded-opentype'), url('../fonts/DINPro-Bold.woff?1502701994') format('woff'), url('../fonts/DINPro-Bold.woff2?1502701994') format('woff2'), url('../fonts/DINPro-Bold.ttf?1501666162') format('truetype');
   font-weight: 800;
 }
 @font-face {
   font-family: "DIN Pro Condensed";
-  src: url('../fonts/DINPro-CondMedium.eot?1502657832');
-  src: url('../fonts/DINPro-CondMedium.eot?&1502657832#iefix') format('embedded-opentype'), url('../fonts/DINPro-CondMedium.woff?1502657832') format('woff'), url('../fonts/DINPro-CondMedium.woff2?1502657832') format('woff2'), url('../fonts/DINPro-CondMedium.ttf?1501666190') format('truetype');
+  src: url('../fonts/DINPro-CondMedium.eot?1502701996');
+  src: url('../fonts/DINPro-CondMedium.eot?&1502701996#iefix') format('embedded-opentype'), url('../fonts/DINPro-CondMedium.woff?1502701996') format('woff'), url('../fonts/DINPro-CondMedium.woff2?1502701996') format('woff2'), url('../fonts/DINPro-CondMedium.ttf?1501666190') format('truetype');
   font-weight: 600;
 }
 @font-face {
   font-family: "SignPainter HouseScript";
-  src: url('../fonts/SignPainter-HouseScript.eot?1502657832');
-  src: url('../fonts/SignPainter-HouseScript.eot?&1502657832#iefix') format('embedded-opentype'), url('../fonts/SignPainter-HouseScript.woff?1502657832') format('woff'), url('../fonts/SignPainter-HouseScript.woff2?1502657832') format('woff2'), url('../fonts/SignPainter-HouseScript.ttf?1440595482') format('truetype');
+  src: url('../fonts/SignPainter-HouseScript.eot?1502701997');
+  src: url('../fonts/SignPainter-HouseScript.eot?&1502701997#iefix') format('embedded-opentype'), url('../fonts/SignPainter-HouseScript.woff?1502701997') format('woff'), url('../fonts/SignPainter-HouseScript.woff2?1502701997') format('woff2'), url('../fonts/SignPainter-HouseScript.ttf?1440595482') format('truetype');
   font-weight: 400;
 }
 body {
@@ -141,8 +141,8 @@ li:last-child, p:last-child, blockquote:last-child {
 
 @font-face {
   font-family: "FontIcons";
-  src: url('../fonts/FontIcons.eot?1502657832');
-  src: url('../fonts/FontIcons.eot?&1502657832#iefix') format('embedded-opentype'), url('../fonts/FontIcons.woff?1502657832') format('woff'), url('../fonts/FontIcons.woff2?1502657832') format('woff2'), url('../fonts/FontIcons.svg?1502657829') format('svg'), url('../fonts/FontIcons.ttf?1502657829') format('truetype');
+  src: url('../fonts/FontIcons.eot?1502701997');
+  src: url('../fonts/FontIcons.eot?&1502701997#iefix') format('embedded-opentype'), url('../fonts/FontIcons.woff?1502701997') format('woff'), url('../fonts/FontIcons.woff2?1502701997') format('woff2'), url('../fonts/FontIcons.svg?1502701993') format('svg'), url('../fonts/FontIcons.ttf?1502701993') format('truetype');
 }
 .i-a_down, .i-a_left, .i-a_right, .i-cancel, .i-email, .i-nav, .i-phone, .i-print, .i-sign, #header-right-mob .dropdown__toggle .icon {
   font-family: "FontIcons";
@@ -1824,7 +1824,11 @@ section.sec.sec-beige .card-content-left .d-t-cell {
 /*end of COLORED SECTIONS*/
 #intro-content {
   max-width: 247px;
-  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -185px;
+  margin-left: -123.5px;
 }
 #intro-content img {
   display: block;
@@ -1834,8 +1838,39 @@ section.sec.sec-beige .card-content-left .d-t-cell {
 #intro-content #intro-title {
   max-width: 161px;
 }
-#intro-content #intro-sign {
+@media (max-height: 370px) {
+  #intro-content {
+    margin: 0 auto;
+    position: static;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+@media (min-height: 660px) {
+  #intro-content {
+    margin-top: -245px;
+  }
+}
+
+#intro-sign {
+  position: relative;
+  overflow: auto;
   max-width: 195px;
+  margin: 82px auto 18px;
+  height: 55px;
+}
+#intro-sign svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#intro-title {
+  opacity: 0;
+  -webkit-animation: 0.6s fadeIn 1.6s ease forwards;
+          animation: 0.6s fadeIn 1.6s ease forwards;
 }
 
 html, body {
@@ -1849,7 +1884,6 @@ html {
 
 body {
   background-color: #F5F5F5;
-  position: relative;
   color: #231F20;
 }
 

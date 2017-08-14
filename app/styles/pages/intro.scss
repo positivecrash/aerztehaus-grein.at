@@ -1,6 +1,11 @@
 #intro-content{
 	max-width: 247px;
-	margin: 0 auto;
+	// margin: 0 auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: - (370px/2);
+	margin-left: - (247px/2);
 
 	img{
 		display: block;
@@ -12,7 +17,35 @@
 		max-width: 161px;
 	}
 
-	#intro-sign{
-		max-width: 195px;
+	@media (max-height: 370px){
+		margin: 0 auto;
+		position: static;
+		padding-top: 80px;
+		padding-bottom: 80px;
 	}
+
+	@media (min-height: 660px){
+		margin-top: - (370px/2) - 60;
+	}
+}
+
+#intro-sign{
+  position: relative;
+  overflow: auto;
+  max-width: 195px;
+  margin: 82px auto 18px;
+  height: 55px;
+
+  svg{
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    max-width: 100%;
+	    max-height: 100%;
+	}
+}
+
+#intro-title{
+	opacity: 0;
+	animation: 0.6s fadeIn 1.6s ease forwards;
 }
