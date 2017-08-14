@@ -212,6 +212,7 @@ section.sec{
 	&.sec-beige{
 		.sec-head{
 			background-color: $color-beige-light;
+			color: #5F5437;
 		}
 
 		.card .card-left img{
@@ -225,11 +226,32 @@ section.sec{
 		.card-content-left .d-t-cell{
 			border-color: rgba($color-beige-light, 0.7);
 		}
+
+		.icon{
+			color: #9E8D62;
+			opacity: 0.7;
+			font-size: 28px;
+		}
 	}
 
 
 }
 
-
-
 /*end of COLORED SECTIONS*/
+
+
+
+/* PAGE - ARZTE */
+p.schedule{
+	@include rem('margin-bottom', 0);
+	white-space: nowrap;
+}
+
+.schedule-day, .schedule-hours{
+	@extend %inline-block;
+}
+
+.schedule-day{
+	@include rem('width', 42);
+}
+/* end of PAGE - ARZTE */

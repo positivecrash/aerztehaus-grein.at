@@ -52,20 +52,23 @@
 	@if $filename == cancel {
 		$char: "\E004";
 	}
-	@if $filename == email {
+	@if $filename == clinic {
 		$char: "\E005";
 	}
-	@if $filename == nav {
+	@if $filename == email {
 		$char: "\E006";
 	}
-	@if $filename == phone {
+	@if $filename == nav {
 		$char: "\E007";
 	}
-	@if $filename == print {
+	@if $filename == phone {
 		$char: "\E008";
 	}
-	@if $filename == sign {
+	@if $filename == print {
 		$char: "\E009";
+	}
+	@if $filename == sign {
+		$char: "\E00A";
 	}
 
 	@return $char;
@@ -91,6 +94,10 @@
 }
 .i-cancel {
 	@include icon(cancel);
+	@extend %icon-styles;
+}
+.i-clinic {
+	@include icon(clinic);
 	@extend %icon-styles;
 }
 .i-email {

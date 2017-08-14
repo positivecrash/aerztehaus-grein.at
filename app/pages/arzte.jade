@@ -1,0 +1,135 @@
+extends extends/layout.jade
+
+block html
+	- var pageTitle = 'Arzte | Ärztehaus Grein – Dr. Huemer'
+	//- - var screen = true
+	- var bodyclass = 'inside'
+
+block content
+	main(role="main").setw
+		h1 Arzte
+
+		section.sec.sec-beige
+			.sec-head
+				h2 Arzt für Allgemeinmedizin
+				.icon.i-clinic
+
+			.sec-body
+				.card
+					.card-left
+						img.avatar(alt="Dr. Huemer Thomas foto", src="assets/i/tmp/Dr-Huemer-Tomas.png")
+					.card-content
+						.d-t.fullw
+							.card-content-left.text
+								.d-t.fullw
+									.d-t-row
+										.d-t-cell Name:
+										.d-t-cell
+											b Dr. Thomas Huemer
+									.d-t-row
+										.d-t-cell Kassen:
+										.d-t-cell
+											.line-obj
+												a(href="#") GKK
+												a(href="#") BVA
+												a(href="#") VA
+												a(href="#") SVA
+												a(href="#") KFA
+												a(href="#") SVB
+									.d-t-row
+										.d-t-cell Ordinationszeiten:
+										.d-t-cell
+											p.schedule
+												span.schedule-day Mo
+												span.schedule-hours 08:00 - 12:00   /  16:00 - 18:00
+											p.schedule
+												span.schedule-day Di
+												span.schedule-hours 08:00 - 12:00
+											p.schedule
+												span.schedule-day Sa
+												span.schedule-hours nur nach telefonischer Vereinbarung
+							.card-content-right
+								a.card-print(href="#"): .i-print
+								a.card-email(href="#"): .i-email
+
+
+
+		section.sec.sec-beige
+			.sec-head
+				h2 Klinische- und Gesundheitspsychologin, Biofeedbacktherapeutin
+				.icon.i-clinic
+
+			.sec-body
+				.card
+					.card-left
+						img.avatar(alt="Dr. Huemer Thomas foto", src="assets/i/tmp/nophoto_dr_girl@2x.png")
+					.card-content
+						.d-t.fullw
+							.card-content-left.text
+								.d-t.fullw
+									.d-t-row
+										.d-t-cell Name:
+										.d-t-cell
+											b Mag. Silke Maximoff
+									.d-t-row
+										.d-t-cell Kassen:
+										.d-t-cell Wahlärztin
+									.d-t-row
+										.d-t-cell Telefon:
+										.d-t-cell 0664 / 57 08 736
+									.d-t-row
+										.d-t-cell Ordinationszeiten:
+										.d-t-cell nach telefonischer Vereinbarung
+									.d-t-row
+										.d-t-cell E-Mail-adresse:
+										.d-t-cell psychologie@maximoff.net
+									.d-t-row
+										.d-t-cell Website:
+										.d-t-cell maximoff.net
+							.card-content-right
+								a.card-print(href="#"): .i-print
+								a.card-email(href="#"): .i-email
+
+			
+		section.sec.sec-beige
+			.sec-head
+				h2 Arzt für Allgemeinmedizin
+				.icon.i-clinic
+
+			.sec-body
+				.card
+					.card-left
+						img.avatar(alt="Dr. Huemer Thomas foto", src="assets/i/tmp/nophoto_dr_boy@2x.png")
+					.card-content
+						.d-t.fullw
+							.card-content-left.text
+								.d-t.fullw
+									.d-t-row
+										.d-t-cell Name:
+										.d-t-cell
+											b Dr. Thomas Huemer
+									.d-t-row
+										.d-t-cell Kassen:
+										.d-t-cell
+											.line-obj
+												a(href="#") GKK
+												a(href="#") BVA
+												a(href="#") VA
+												a(href="#") SVA
+												a(href="#") KFA
+												a(href="#") SVB
+									.d-t-row
+										.d-t-cell Ordinationszeiten:
+										.d-t-cell
+											p.schedule
+												span.schedule-day Mo
+												span.schedule-hours 08:00 - 12:00   /  16:00 - 18:00
+											p.schedule
+												span.schedule-day Di
+												span.schedule-hours 08:00 - 12:00
+											p.schedule
+												span.schedule-day Sa
+												span.schedule-hours nur nach telefonischer Vereinbarung
+							.card-content-right
+								a.card-print(href="#"): .i-print
+								a.card-email(href="#"): .i-email

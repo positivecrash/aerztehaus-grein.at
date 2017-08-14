@@ -48,7 +48,7 @@ input, select {
   }
 }
 
-#header-nav, #header-nav li, #header-nav a, .header-textsize, .header-textsize li, .header-textsize a, .header-phone-desk, #header-right-mob .dropdown, #header-right-mob .dropdown__toggle, .index-slider-img img, .js-slider-controls a {
+#header-nav, #header-nav li, #header-nav a, .header-textsize, .header-textsize li, .header-textsize a, .header-phone-desk, #header-right-mob .dropdown, #header-right-mob .dropdown__toggle, .index-slider-img img, .js-slider-controls a, .schedule-day, .schedule-hours, .line-obj > * {
   display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
@@ -77,20 +77,20 @@ a, a:hover, a:focus, a:visited {
 
 @font-face {
   font-family: "DIN Pro";
-  src: url('../fonts/DINPro-Bold.eot?1502701994');
-  src: url('../fonts/DINPro-Bold.eot?&1502701994#iefix') format('embedded-opentype'), url('../fonts/DINPro-Bold.woff?1502701994') format('woff'), url('../fonts/DINPro-Bold.woff2?1502701994') format('woff2'), url('../fonts/DINPro-Bold.ttf?1501666162') format('truetype');
+  src: url('../fonts/DINPro-Bold.eot?1502739812');
+  src: url('../fonts/DINPro-Bold.eot?&1502739812#iefix') format('embedded-opentype'), url('../fonts/DINPro-Bold.woff?1502739812') format('woff'), url('../fonts/DINPro-Bold.woff2?1502739812') format('woff2'), url('../fonts/DINPro-Bold.ttf?1501666162') format('truetype');
   font-weight: 800;
 }
 @font-face {
   font-family: "DIN Pro Condensed";
-  src: url('../fonts/DINPro-CondMedium.eot?1502701996');
-  src: url('../fonts/DINPro-CondMedium.eot?&1502701996#iefix') format('embedded-opentype'), url('../fonts/DINPro-CondMedium.woff?1502701996') format('woff'), url('../fonts/DINPro-CondMedium.woff2?1502701996') format('woff2'), url('../fonts/DINPro-CondMedium.ttf?1501666190') format('truetype');
+  src: url('../fonts/DINPro-CondMedium.eot?1502739815');
+  src: url('../fonts/DINPro-CondMedium.eot?&1502739815#iefix') format('embedded-opentype'), url('../fonts/DINPro-CondMedium.woff?1502739815') format('woff'), url('../fonts/DINPro-CondMedium.woff2?1502739815') format('woff2'), url('../fonts/DINPro-CondMedium.ttf?1501666190') format('truetype');
   font-weight: 600;
 }
 @font-face {
   font-family: "SignPainter HouseScript";
-  src: url('../fonts/SignPainter-HouseScript.eot?1502701997');
-  src: url('../fonts/SignPainter-HouseScript.eot?&1502701997#iefix') format('embedded-opentype'), url('../fonts/SignPainter-HouseScript.woff?1502701997') format('woff'), url('../fonts/SignPainter-HouseScript.woff2?1502701997') format('woff2'), url('../fonts/SignPainter-HouseScript.ttf?1440595482') format('truetype');
+  src: url('../fonts/SignPainter-HouseScript.eot?1502739815');
+  src: url('../fonts/SignPainter-HouseScript.eot?&1502739815#iefix') format('embedded-opentype'), url('../fonts/SignPainter-HouseScript.woff?1502739815') format('woff'), url('../fonts/SignPainter-HouseScript.woff2?1502739815') format('woff2'), url('../fonts/SignPainter-HouseScript.ttf?1440595482') format('truetype');
   font-weight: 400;
 }
 body {
@@ -145,10 +145,10 @@ li:last-child, p:last-child, blockquote:last-child {
 
 @font-face {
   font-family: "FontIcons";
-  src: url('../fonts/FontIcons.eot?1502701997');
-  src: url('../fonts/FontIcons.eot?&1502701997#iefix') format('embedded-opentype'), url('../fonts/FontIcons.woff?1502701997') format('woff'), url('../fonts/FontIcons.woff2?1502701997') format('woff2'), url('../fonts/FontIcons.svg?1502701993') format('svg'), url('../fonts/FontIcons.ttf?1502701993') format('truetype');
+  src: url('../fonts/FontIcons.eot?1502739815');
+  src: url('../fonts/FontIcons.eot?&1502739815#iefix') format('embedded-opentype'), url('../fonts/FontIcons.woff?1502739815') format('woff'), url('../fonts/FontIcons.woff2?1502739815') format('woff2'), url('../fonts/FontIcons.svg?1502739812') format('svg'), url('../fonts/FontIcons.ttf?1502739812') format('truetype');
 }
-.i-a_down, .i-a_left, .i-a_right, .i-cancel, .i-email, .i-nav, .i-phone, .i-print, .i-sign, #header-right-mob .dropdown__toggle .icon {
+.i-a_down, .i-a_left, .i-a_right, .i-cancel, .i-clinic, .i-email, .i-nav, .i-phone, .i-print, .i-sign, #header-right-mob .dropdown__toggle .icon {
   font-family: "FontIcons";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -177,24 +177,28 @@ li:last-child, p:last-child, blockquote:last-child {
   content: "";
 }
 
-.i-email:before {
+.i-clinic:before {
   content: "";
 }
 
-.i-nav:before {
+.i-email:before {
   content: "";
 }
 
-.i-phone:before {
+.i-nav:before {
   content: "";
 }
 
-.i-print:before {
+.i-phone:before {
   content: "";
 }
 
-.i-sign:before {
+.i-print:before {
   content: "";
+}
+
+.i-sign:before {
+  content: "";
 }
 
 @-webkit-keyframes fadeIn {
@@ -1232,7 +1236,7 @@ header[role='banner'] li {
   border-color: #FF1D1D;
 }
 #header-mob-phone .dropdown__toggle .icon:before {
-  content: "";
+  content: "";
 }
 #header-mob-phone .dropdown__content {
   background-color: #fff;
@@ -1251,7 +1255,7 @@ header[role='banner'] li {
   font-size: 1.25rem;
 }
 #header-mob-nav .dropdown__toggle .icon:before {
-  content: "";
+  content: "";
 }
 #header-mob-nav .dropdown__content {
   background-color: #8D7E58;
@@ -1303,16 +1307,13 @@ footer[role='contentinfo'] {
   padding: 0.625rem 0rem;
   line-height: 1;
   font-weight: 300;
-}
-footer[role='contentinfo'] a {
-  color: #fff;
-}
-
-.index footer[role='contentinfo'] {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
+}
+footer[role='contentinfo'] a {
+  color: #fff;
 }
 
 .index {
@@ -1817,6 +1818,7 @@ section.sec.sec-blue .card-content-left .d-t-cell {
 }
 section.sec.sec-beige .sec-head {
   background-color: #D8D1C0;
+  color: #5F5437;
 }
 section.sec.sec-beige .card .card-left img {
   border-color: rgba(216, 209, 192, 0.7);
@@ -1827,8 +1829,26 @@ section.sec.sec-beige .card .card-left img {
 section.sec.sec-beige .card-content-left .d-t-cell {
   border-color: rgba(216, 209, 192, 0.7);
 }
+section.sec.sec-beige .icon {
+  color: #9E8D62;
+  opacity: 0.7;
+  font-size: 28px;
+}
 
 /*end of COLORED SECTIONS*/
+/* PAGE - ARZTE */
+p.schedule {
+  margin-bottom: 0px;
+  margin-bottom: 0rem;
+  white-space: nowrap;
+}
+
+.schedule-day {
+  width: 42px;
+  width: 2.625rem;
+}
+
+/* end of PAGE - ARZTE */
 #intro-content {
   max-width: 247px;
   position: absolute;
@@ -1881,17 +1901,21 @@ section.sec.sec-beige .card-content-left .d-t-cell {
 }
 
 html, body {
-  height: 100%;
+  min-height: 100%;
   position: relative;
 }
 
 html {
   font-size: 100%;
+  height: 100%;
 }
 
 body {
   background-color: #F5F5F5;
   color: #231F20;
+}
+body.index {
+  height: 100%;
 }
 
 .inside main[role="main"] {
@@ -1983,6 +2007,14 @@ img.d-b {
   display: block;
   -webkit-animation: 0.2s fadeIn ease-in-out forwards;
           animation: 0.2s fadeIn ease-in-out forwards;
+}
+
+.line-obj > * {
+  margin-right: 20px;
+  margin-right: 1.25rem;
+}
+.line-obj > *:last-child {
+  margin-right: 0;
 }
 
 .screen {
