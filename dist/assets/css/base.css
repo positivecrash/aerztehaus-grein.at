@@ -132,11 +132,15 @@ ul, ol {
 }
 
 li, p, blockquote {
-  margin-bottom: 20px;
-  margin-bottom: 1.25rem;
+  margin-bottom: 15px;
+  margin-bottom: 0.9375rem;
 }
 li:last-child, p:last-child, blockquote:last-child {
   margin-bottom: 0;
+}
+
+.text {
+  line-height: 1.8;
 }
 
 @font-face {
@@ -1299,13 +1303,16 @@ footer[role='contentinfo'] {
   padding: 0.625rem 0rem;
   line-height: 1;
   font-weight: 300;
+}
+footer[role='contentinfo'] a {
+  color: #fff;
+}
+
+.index footer[role='contentinfo'] {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
-}
-footer[role='contentinfo'] a {
-  color: #fff;
 }
 
 .index {

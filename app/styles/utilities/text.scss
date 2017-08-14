@@ -63,7 +63,7 @@ ul, ol {
 }
 
 li, p, blockquote{
-  @include rem('margin-bottom', 20);
+  @include rem('margin-bottom', 15);
 
   &:last-child{
   	margin-bottom: 0;
@@ -71,3 +71,7 @@ li, p, blockquote{
 }
 
 blockquote{}
+
+.text{
+  line-height: 1.8;
+}

@@ -408,12 +408,14 @@ footer[role='contentinfo']{
   font-weight: 300;
 
 
+  a{
+    color: #fff;
+  }
+}
+
+.index footer[role='contentinfo']{
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
-
-  a{
-    color: #fff;
-  }
 }
