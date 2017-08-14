@@ -76,6 +76,11 @@ body {
 .f-right { float: right; }
 
 
+
+
+
+
+
 .d-t {
   display: table;
 
@@ -87,6 +92,46 @@ body {
     display: table-row;
   }
 }
+
+.d-t-card{
+  .d-t-cell{
+    border-bottom: 1px solid rgba($color-gray-light, 0.7);
+    padding: 8px 0;
+
+    &:first-child{
+      @include rem('width', 136);
+      color: $color-beige;
+    }
+
+    @media screen and (max-width: #{$mq-menuhide}) 
+    {
+      display: block;
+
+      &, &:first-child{
+        width: 100%;
+      }
+
+      &:first-child{
+        border-bottom: 0;
+        padding-top: 20px;
+        padding-bottom: 0;
+      }
+
+      &:last-child{
+        padding-bottom: 20px;
+      }
+    }
+  }
+
+  .d-t-row:last-child .d-t-cell{
+    border: 0;
+  }
+}
+
+
+
+
+
 
 .d-ib { display: inline-block; }
 .d-b { display: block; }

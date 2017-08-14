@@ -21,9 +21,21 @@
 }
 
 
+
 h2 {
   @include rem('font-size', 24);
   font-weight: 300;
+}
+
+h3 {
+  @include rem('font-size', 18);
+  font-weight: 600;
+
+  @include rem('margin-top', 28);
+
+  &:first-child{
+    margin-top: 0;
+  }
 }
 
 
@@ -75,3 +87,48 @@ blockquote{}
 .text{
   line-height: 1.8;
 }
+
+.font-light{
+  font-weight: 300;
+}
+
+
+
+
+table{
+  td, th{
+    padding: 6px 14px;
+
+    vertical-align: middle;
+    border-style: solid;
+    border-color: #EDEDED;
+  }
+
+  tbody{
+    td{
+      border-width: 0 0 1px 1px;
+
+      &:first-child{
+        border-left: 0;
+      }
+    }
+    
+
+    tr:last-child{
+      td{
+        border-bottom: 0;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+/*=== MARGINS ====*/
+.m-b-0 { margin-bottom: 0; }
+
+
+

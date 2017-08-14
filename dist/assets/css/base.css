@@ -41,7 +41,7 @@ input, select {
   box-sizing: border-box;
   margin: 0 auto;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 660px) {
   .setw {
     padding-left: 10px;
     padding-right: 10px;
@@ -109,6 +109,17 @@ h2 {
   font-weight: 300;
 }
 
+h3 {
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-top: 28px;
+  margin-top: 1.75rem;
+}
+h3:first-child {
+  margin-top: 0;
+}
+
 /*=== TEXT COLORS ====*/
 body .c-red, body a.c-red {
   color: #FF1D1D;
@@ -141,6 +152,31 @@ li:last-child, p:last-child, blockquote:last-child {
 
 .text {
   line-height: 1.8;
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+table td, table th {
+  padding: 6px 14px;
+  vertical-align: middle;
+  border-style: solid;
+  border-color: #EDEDED;
+}
+table tbody td {
+  border-width: 0 0 1px 1px;
+}
+table tbody td:first-child {
+  border-left: 0;
+}
+table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+/*=== MARGINS ====*/
+.m-b-0 {
+  margin-bottom: 0;
 }
 
 @font-face {
@@ -998,7 +1034,7 @@ header[role='banner'] {
   padding-bottom: 30px;
   padding-bottom: 1.875rem;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 660px) {
   header[role='banner'] {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -1210,7 +1246,7 @@ header[role='banner'] li {
   padding-left: 10px;
   padding-right: 10px;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 660px) {
   #header-right-mob .dropdown__content {
     padding: 20px;
     padding: 1.25rem;
@@ -1342,7 +1378,7 @@ footer[role='contentinfo'] a {
   bottom: 80px;
   left: 40px;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 660px) {
   .index-slider-text {
     left: 10px;
   }
@@ -1373,7 +1409,7 @@ footer[role='contentinfo'] a {
   left: 18.75rem;
   text-align: center;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 660px) {
   .index-slider-img {
     right: 10px;
   }
@@ -1674,39 +1710,14 @@ footer[role='contentinfo'] a {
 .card .card-content {
   margin-left: 212px;
 }
+.card .card-content h3 {
+  text-align: left;
+}
 .card .card-content-left, .card .card-content-right {
   vertical-align: top;
 }
 .card .card-content-left {
   width: 95%;
-}
-.card .card-content-left .d-t-cell {
-  border-bottom: 1px solid rgba(237, 237, 237, 0.7);
-  padding: 8px 0;
-}
-.card .card-content-left .d-t-cell:first-child {
-  width: 136px;
-  width: 8.5rem;
-  color: #8D7E58;
-}
-@media screen and (max-width: 927px) {
-  .card .card-content-left .d-t-cell {
-    display: block;
-  }
-  .card .card-content-left .d-t-cell, .card .card-content-left .d-t-cell:first-child {
-    width: 100%;
-  }
-  .card .card-content-left .d-t-cell:first-child {
-    border-bottom: 0;
-    padding-top: 20px;
-    padding-bottom: 0;
-  }
-  .card .card-content-left .d-t-cell:last-child {
-    padding-bottom: 20px;
-  }
-}
-.card .card-content-left .d-t-row:last-child .d-t-cell {
-  border: 0;
 }
 .card .card-content-right {
   text-align: right;
@@ -1719,12 +1730,13 @@ footer[role='contentinfo'] a {
   font-size: 34px;
   font-size: 2.125rem;
   text-align: center;
+  line-height: 1;
 }
 .card .card-content-right .i-email {
   font-size: 25px;
   font-size: 1.5625rem;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 660px) {
   .card .card-left {
     float: none;
     width: 100%;
@@ -1773,7 +1785,7 @@ section.sec .sec-head {
   color: #5A5F67;
   margin-bottom: 8px;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 660px) {
   section.sec .sec-head {
     padding-left: 16px;
     padding-right: 16px;
@@ -1786,7 +1798,7 @@ section.sec .sec-head .icon {
   font-size: 24px;
   margin-top: -12px;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 660px) {
   section.sec .sec-head .icon {
     position: static;
     display: block;
@@ -1849,6 +1861,39 @@ p.schedule {
 }
 
 /* end of PAGE - ARZTE */
+/* PAGE - KONTAKT */
+.page-kontakt .card-content-left .d-t-cell {
+  padding-left: 32px;
+}
+.page-kontakt .card-content-left .d-t-cell:first-child {
+  padding-left: 0;
+}
+@media (max-width: 920px) {
+  .page-kontakt .card-content-left .d-t-cell {
+    display: block;
+    padding-left: 0;
+    margin-bottom: 60px;
+  }
+}
+
+#kontakt-map {
+  margin: 30px 0px;
+  margin: 1.875rem 0rem;
+}
+#kontakt-map iframe {
+  width: 100%;
+  height: 309px;
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+  pointer-events: none;
+}
+#kontakt-map:hover iframe {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+  pointer-events: auto;
+}
+
+/* end of PAGE - KONTAKT */
 #intro-content {
   max-width: 247px;
   position: absolute;
@@ -1941,6 +1986,35 @@ body.index {
   display: table-row;
 }
 
+.d-t-card .d-t-cell {
+  border-bottom: 1px solid rgba(237, 237, 237, 0.7);
+  padding: 8px 0;
+}
+.d-t-card .d-t-cell:first-child {
+  width: 136px;
+  width: 8.5rem;
+  color: #8D7E58;
+}
+@media screen and (max-width: 927px) {
+  .d-t-card .d-t-cell {
+    display: block;
+  }
+  .d-t-card .d-t-cell, .d-t-card .d-t-cell:first-child {
+    width: 100%;
+  }
+  .d-t-card .d-t-cell:first-child {
+    border-bottom: 0;
+    padding-top: 20px;
+    padding-bottom: 0;
+  }
+  .d-t-card .d-t-cell:last-child {
+    padding-bottom: 20px;
+  }
+}
+.d-t-card .d-t-row:last-child .d-t-cell {
+  border: 0;
+}
+
 .d-ib {
   display: inline-block;
 }
@@ -1977,7 +2051,7 @@ img.d-b {
   width: 46%;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 660px) {
   .col-3-wrap, .col-2-wrap {
     margin-left: 0;
   }

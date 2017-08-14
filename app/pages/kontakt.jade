@@ -1,0 +1,69 @@
+extends extends/layout.jade
+
+block html
+	- var pageTitle = 'Kontakt | Ärztehaus Grein – Dr. Huemer'
+	//- - var screen = true
+	- var bodyclass = 'inside'
+
+block content
+	main(role="main").setw.page-kontakt
+		h1 Kontakt
+
+		section.sec
+			.sec-head
+				h2 Ärztehaus Grein – Dr. Huemer
+				.icon.i-sign
+
+			.sec-body
+				.card
+					.card-left
+						img(alt="Allgemeinmedizin", src="assets/i/tmp/photo_arztehaus@2x.png")
+					.card-content
+						.d-t.fullw
+							.card-content-left.text
+								.d-t.fullw
+									.d-t-row
+										.d-t-cell
+											h3 Sprechstunden
+											table
+												tbody
+													tr
+														td: b Mo
+														td 08:00 - 12:00
+														td 16:00 - 18:00
+													tr
+														td: b Di
+														td 08:00 - 12:00
+														td
+													tr
+														td: b Mi
+														td 08:00 - 12:00
+														td
+													tr
+														td: b Do
+														td.font-light geschlossen
+														td
+													tr
+														td: b Fr
+														td 08:00 - 12:00
+														td 16:00 - 18:00
+													tr
+														td: b Sa
+														td.font-light(colspan="2") nur nach telefonischer Vereinbarung
+										.d-t-cell
+											h3 Anfahrt
+											p Hauptstraße 21, 4360 Grein
+											h3 Telefon
+											p.m-b-0 07268 244 – 
+												span.font-light Ordination
+											p.m-b-0 144 – 
+												span.font-light Notruf
+											h3 Email
+											p huemer-thomas@aon.at
+							.card-content-right
+								a.card-print(href="#"): .i-print
+								a.card-email(href="#"): .i-email
+
+
+					#kontakt-map
+						| <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2657.859318170689!2d14.85411315144605!3d48.228583452694835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47724e07be54b7fd%3A0xe8cf238237824e67!2zSGF1cHRzdHJhw59lIDIxLCA0MzYwIEdyZWluLCDQkNCy0YHRgtGA0LjRjw!5e0!3m2!1sru!2sru!4v1502744906271" frameborder="0" style="border:0" allowfullscreen></iframe>
