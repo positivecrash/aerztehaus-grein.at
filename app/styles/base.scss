@@ -25,9 +25,9 @@
 
 
 
-html, body{
+html, body, .screen{
   min-height: 100%;
-  position: relative
+  position: relative;
 }
 
 
@@ -45,6 +45,11 @@ body {
   &.index{
     height: 100%;
   }
+}
+
+.screen{
+  box-sizing: border-box;
+  height: 100%;
 }
 
 // #{$modernizr-cssanimations}{
@@ -222,11 +227,6 @@ img.d-b { max-width: 100%; }
 }
 
 
-.screen{
-  position: relative;
-  box-sizing: border-box;
-  min-height: 100%;
-}
 
 .flexbox-center{
   /* align content vertically */

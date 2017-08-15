@@ -45,19 +45,6 @@ jQuery(document).ready(function($){
     
 
 
-    /*====== INTRO ======*/
-    if($('#intro-sign svg').length > 0){
-        $('#intro-sign svg').svgAnimate();
-    }
-
-    if($('#intro-music').length > 0){
-
-      	$('#intro-music')[0].play();
-
-        //  setTimeout(function() {
-       //      $('#intro-music')[0].play();
-        // }, 500);
-    }
 
 
 
@@ -79,28 +66,39 @@ jQuery(document).ready(function($){
 
     function textsize_scale(i){
 
+        var scale = 100;
+        var count = 0;
+
         $('.js-tsize-plus').removeClass('active');
         $('.js-tsize-plus span').html('');
         $('.js-tsize-minus').removeClass('active');
         $('.js-tsize-minus span').html('');
 
         if ( i > 0 ){
+            count = parseInt(i) + 1;
+
             $('.js-tsize-plus').each(function(){
                 $(this).addClass('active');
-                $(this).find('span').html(i+1);
+                $(this).find('span').html(count);
             });
         }
 
         if ( i < 0 ){
+            count = parseInt(i) - 1;
+
             $('.js-tsize-minus').each(function(){
                 $(this).addClass('active');
-                $(this).find('span').html(i-1);
+                $(this).find('span').html(count);
             });
         }
+
+        scale = scale + 5*i;
+
+        $('html').css('font-size', scale + '%');
     }
 
     function textsize_cookies_get(){
-        if ( Cookies.get('textsize') == 1)
+        if ( Cookies.get('textsize') )
             return Cookies.get('textsize');
         else
             return 0;
@@ -108,25 +106,25 @@ jQuery(document).ready(function($){
 
     function textsize_cookies_set(i){
         Cookies.set('textsize', i, { expires: 7 });
-        console.log(Cookies.get('textsize'));
     }
 
 
     if($('.js-tsize-plus').length > 0){
-        var scale = 100;
         var i = textsize_cookies_get();
+
+        if ( i != 0 ){
+            textsize_scale(i);
+        }
 
 
         $('.js-tsize-plus').on('click', function(e){
             e.preventDefault();
             e.stopPropagation();
 
-            scale += 5;
             i++;
 
             textsize_scale(i);
             textsize_cookies_set(i);
-            $('html').css('font-size', scale + '%');
         });
 
 
@@ -135,13 +133,34 @@ jQuery(document).ready(function($){
             e.preventDefault();
             e.stopPropagation();
 
-            scale -= 5;
             i--;
 
             textsize_scale(i);
             textsize_cookies_set(i);
-            $('html').css('font-size', scale + '%');
         });
     }
+
+
+
+
+    /*====== SHOW INTRO ======*/
+    if($('body.page-index').length > 0){
+        if ( !Cookies.get('first') ){
+            Cookies.set('first', 1);
+            $('body.index').addClass('index-intro');
+        }
+        else
+            $('body.index').removeClass('index-intro');
+
+        if($('body.index-intro #intro-sign svg').length > 0){
+            $('body.index-intro #intro-sign svg').svgAnimate();
+        }
+
+        if($('body.index-intro #intro-music').length > 0){
+            $('body.index-intro #intro-music')[0].play();
+        }
+    }
+
+    
 
 });

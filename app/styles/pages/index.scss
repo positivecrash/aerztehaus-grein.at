@@ -117,22 +117,9 @@
 	opacity: 0;
 }
 
-// .index-slider-img{
-// 	.slide-0, .slide-1, .slide-2 {
-// 		opacity: 0;
-// 	}
-// }
 
-// .slide_0{
-// 	.slide-1, .slide-2 { @extend %slide_hide; }
-// }
-
-// .slide_1{
-// 	.slide-0, .slide-2 { @extend %slide_hide; }
-// }
 
 .slide_2{
-	// .slide-0, .slide-1 { @extend %slide_hide; }
 
 	img.slide-2{
 		max-width: 100%;
@@ -471,3 +458,26 @@
 
 
 /*end of SLIDER*/
+
+
+
+
+/*INTRO*/
+
+.page-index:not(.index-intro) #intro{
+	display: none;
+}
+
+#{$modernizr-cssanimations}{
+	.index-intro{
+		header, footer, #index-slider-wrap {
+			opacity: 0;
+			animation: 0.6s IntroShow 3.2s ease forwards;
+		}
+
+		#intro{
+			animation: 0.2s IntroHide 3s ease forwards;
+		}
+	}
+}
+/*end of INTRO*/
