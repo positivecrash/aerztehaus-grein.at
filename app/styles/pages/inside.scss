@@ -156,29 +156,59 @@ section.sec{
 	}
 
 
-	&.sec-blue{
-		.sec-head{
-			background-color: $color-blue-light;
-		}
+	// &.sec-blue{
+	// 	.sec-head{
+	// 		background-color: $color-blue-light;
+	// 	}
 
-		.sec-body{
-			border-color: $color-blue-light;
-		}
+	// 	.sec-body{
+	// 		border-color: $color-blue-light;
+	// 	}
 
-		.card .card-left img{
-			border-color: rgba($color-blue-light, 0.7);
-		}
+	// 	.card .card-left img{
+	// 		border-color: rgba($color-blue-light, 0.7);
+	// 	}
 
-		.card .card-left img{
-			border-color: rgba($color-blue-light, 0.7);
-		}
+	// 	.card .card-left img{
+	// 		border-color: rgba($color-blue-light, 0.7);
+	// 	}
 
-		.card-content-left .d-t-cell{
-			border-color: rgba($color-blue-light, 0.7);
-		}
-	}
+	// 	.card-content-left .d-t-cell{
+	// 		border-color: rgba($color-blue-light, 0.7);
+	// 	}
+	// }
 
-	&.sec-beige{
+	// &.sec-beige{
+	// 	.sec-head{
+	// 		background-color: $color-beige-light;
+	// 		color: #5F5437;
+	// 	}
+
+	// 	.card .card-left img{
+	// 		border-color: rgba($color-beige-light, 0.7);
+	// 	}
+
+	// 	.card .card-left img{
+	// 		border-color: rgba($color-beige-light, 0.7);
+	// 	}
+
+	// 	.card-content-left .d-t-cell{
+	// 		border-color: rgba($color-beige-light, 0.7);
+	// 	}
+
+	// 	.icon{
+	// 		color: #9E8D62;
+	// 		opacity: 0.7;
+	// 		font-size: 28px;
+	// 	}
+	// }
+
+
+}
+
+
+.page-color-beige{
+	section.sec{
 		.sec-head{
 			background-color: $color-beige-light;
 			color: #5F5437;
@@ -203,7 +233,38 @@ section.sec{
 		}
 	}
 
+	#header-nav{
+		li.current-menu-item > a { background-color: $color-beige-light; }
+	}
+}
 
+
+.page-color-blue{
+	section.sec{
+		.sec-head{
+			background-color: $color-blue-light;
+		}
+
+		.sec-body{
+			border-color: $color-blue-light;
+		}
+
+		.card .card-left img{
+			border-color: rgba($color-blue-light, 0.7);
+		}
+
+		.card .card-left img{
+			border-color: rgba($color-blue-light, 0.7);
+		}
+
+		.card-content-left .d-t-cell{
+			border-color: rgba($color-blue-light, 0.7);
+		}
+	}
+
+	#header-nav{
+		li.current-menu-item > a { background-color: $color-blue-light; }
+	}
 }
 
 /*end of COLORED SECTIONS*/

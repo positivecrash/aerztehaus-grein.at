@@ -1156,14 +1156,8 @@ header[role='banner'] li {
   margin-left: -5px;
   margin-left: -0.3125rem;
 }
-#header-nav > li.active > a, #header-nav > li.current > a {
+#header-nav > li.active > a, #header-nav > li.current-menu-item > a {
   background-color: #EDEDED;
-}
-#header-nav > li.current-blue.current > a {
-  background-color: #E4EBF5;
-}
-#header-nav > li.current-beige.current > a {
-  background-color: #D8D1C0;
 }
 #header-nav .header-nav-submenu {
   top: 70px;
@@ -1899,38 +1893,46 @@ section.sec .sec-body {
 section.sec .avatar {
   border: 1px solid #EDEDED;
 }
-section.sec.sec-blue .sec-head {
-  background-color: #E4EBF5;
-}
-section.sec.sec-blue .sec-body {
-  border-color: #E4EBF5;
-}
-section.sec.sec-blue .card .card-left img {
-  border-color: rgba(228, 235, 245, 0.7);
-}
-section.sec.sec-blue .card .card-left img {
-  border-color: rgba(228, 235, 245, 0.7);
-}
-section.sec.sec-blue .card-content-left .d-t-cell {
-  border-color: rgba(228, 235, 245, 0.7);
-}
-section.sec.sec-beige .sec-head {
+
+.page-color-beige section.sec .sec-head {
   background-color: #D8D1C0;
   color: #5F5437;
 }
-section.sec.sec-beige .card .card-left img {
+.page-color-beige section.sec .card .card-left img {
   border-color: rgba(216, 209, 192, 0.7);
 }
-section.sec.sec-beige .card .card-left img {
+.page-color-beige section.sec .card .card-left img {
   border-color: rgba(216, 209, 192, 0.7);
 }
-section.sec.sec-beige .card-content-left .d-t-cell {
+.page-color-beige section.sec .card-content-left .d-t-cell {
   border-color: rgba(216, 209, 192, 0.7);
 }
-section.sec.sec-beige .icon {
+.page-color-beige section.sec .icon {
   color: #9E8D62;
   opacity: 0.7;
   font-size: 28px;
+}
+.page-color-beige #header-nav li.current-menu-item > a {
+  background-color: #D8D1C0;
+}
+
+.page-color-blue section.sec .sec-head {
+  background-color: #E4EBF5;
+}
+.page-color-blue section.sec .sec-body {
+  border-color: #E4EBF5;
+}
+.page-color-blue section.sec .card .card-left img {
+  border-color: rgba(228, 235, 245, 0.7);
+}
+.page-color-blue section.sec .card .card-left img {
+  border-color: rgba(228, 235, 245, 0.7);
+}
+.page-color-blue section.sec .card-content-left .d-t-cell {
+  border-color: rgba(228, 235, 245, 0.7);
+}
+.page-color-blue #header-nav li.current-menu-item > a {
+  background-color: #E4EBF5;
 }
 
 /*end of COLORED SECTIONS*/

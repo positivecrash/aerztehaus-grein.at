@@ -97,12 +97,12 @@ header[role='banner']{
       }
     }
 
-    &.active > a, &.current > a{
+    &.active > a, &.current-menu-item > a{
       background-color: $color-gray-light;
     }
 
-    &.current-blue.current > a{ background-color: $color-blue-light; }
-    &.current-beige.current > a{ background-color: $color-beige-light; }
+    // &.current-blue.current > a{ background-color: $color-blue-light; }
+    // &.current-beige.current > a{ background-color: $color-beige-light; }
 
   }
 
