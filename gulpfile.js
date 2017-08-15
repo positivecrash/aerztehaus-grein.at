@@ -100,7 +100,7 @@ gulp.task('live', function() {
 	livereload.listen();
 
 	//watch .scss files
-	gulp.watch(['app/styles/utilities/*.scss', 'app/styles/blocks/*.scss', 'app/styles/pages/*.scss', 'app/styles/base.scss'], ['styles']);
+	gulp.watch(['app/styles/utilities/*.scss', 'app/styles/blocks/*.scss', 'app/styles/pages/*.scss', 'app/styles/base.scss', 'app/styles/print.scss'], ['styles']);
 
 	//watch .js files
 	gulp.watch('app/scripts/**/*.js', ['scripts']);

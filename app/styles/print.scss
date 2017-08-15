@@ -1,0 +1,77 @@
+@import "utilities/variables";
+
+
+body{
+	background-color: #fff;
+}
+
+main:after{
+	content: "aerztehaus-grein.at";
+	// text-align: center;
+	// display: block;
+}
+
+#header-center, footer[role=contentinfo], h1, .card-content-right
+{
+	display: none;
+}
+
+header .header-phone-desk a{
+	color: $color-text;
+}
+
+
+
+section.sec{
+	display: none;
+
+	&.print{
+		display: block;
+	}
+}
+
+
+.card .card-left{
+	width: 100px;
+}
+
+.card .card-content{
+	margin-left: 120px;
+}
+
+
+.page-kontakt{
+
+	section.sec .sec-body {
+		padding-left: 0;
+		padding-right: 0;
+		border: 0;
+	}
+
+	.card-left{
+		display: none;
+	}
+
+	.card-content{
+		margin-left: 0;
+	}
+
+
+  .card-content-left .d-t-cell{
+		display: block;
+		float: left;
+		width: 48%;
+		margin-left: 4%;
+		padding: 0;
+
+		&:first-child{
+			margin-left: 0;
+		}
+	}
+
+	#kontakt-map{
+		pointer-events: auto;
+		iframe { filter: none }
+	}
+
+}

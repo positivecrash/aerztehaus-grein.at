@@ -7679,13 +7679,30 @@ jQuery(document).ready(function($){
 
 
     /*====== INTRO ======*/
-    $('#intro-sign svg').svgAnimate();
+    if($('#intro-sign svg').length > 0){
+        $('#intro-sign svg').svgAnimate();
+    }
 
-   //  setTimeout(function() {
-   //      $('#intro-music')[0].play();
-  	// }, 500);
+    if($('#intro-music').length > 0){
 
-  	$('#intro-music')[0].play();
+      	$('#intro-music')[0].play();
+
+        //  setTimeout(function() {
+       //      $('#intro-music')[0].play();
+        // }, 500);
+    }
+
+
+
+    /*====== PRINT ======*/
+    $('.card-print').on('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+
+        $(this).parents('section.sec').addClass('print');
+        window.print();
+        $(this).parents('section.sec').removeClass('print');
+    });
 
 
 });
