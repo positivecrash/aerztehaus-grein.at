@@ -117,7 +117,7 @@ header[role='banner']{
 
     text-transform: none;
     font-family: $font-family-base;
-    font-size: #{$font-size-base}px;
+    @include rem('font-size', $font-size-base);
 
     @include rem('padding', 0, 8);
 
@@ -162,13 +162,36 @@ header[role='banner']{
 
   a{
     @extend %b_beige;
-
     @include rem('margin-left', 6);
+    position: relative;
+
 
     &:first-child{
       margin-left: 0;
     }
+
+    &.active{
+      background-color: $color-beige;
+      color: #fff;
+
+      span{
+        position: absolute;
+        background-color: $color-beige;
+        border: 1px solid #fff;
+        width: 25px;
+        height: 25px;
+        top: -10px;
+        right: -10px;
+        font-size: 13px;
+        line-height: 1;
+        text-align: center;
+        padding: 5px 0;
+        box-sizing: border-box;
+      }
+    }
   }
+
+
 }
 
 
@@ -293,6 +316,11 @@ header[role='banner']{
     &:first-child{
       margin-left: 0;
     }
+
+    &.active{
+      &, span { background-color: $color-text; }
+    }
+
   }
 }
 

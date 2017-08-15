@@ -77,20 +77,20 @@ a, a:hover, a:focus, a:visited {
 
 @font-face {
   font-family: "DIN Pro";
-  src: url('../fonts/DINPro-Bold.eot?1502802981');
-  src: url('../fonts/DINPro-Bold.eot?&1502802981#iefix') format('embedded-opentype'), url('../fonts/DINPro-Bold.woff?1502802981') format('woff'), url('../fonts/DINPro-Bold.woff2?1502802981') format('woff2'), url('../fonts/DINPro-Bold.ttf?1501666162') format('truetype');
+  src: url('../fonts/DINPro-Bold.eot?1502804948');
+  src: url('../fonts/DINPro-Bold.eot?&1502804948#iefix') format('embedded-opentype'), url('../fonts/DINPro-Bold.woff?1502804948') format('woff'), url('../fonts/DINPro-Bold.woff2?1502804948') format('woff2'), url('../fonts/DINPro-Bold.ttf?1501666162') format('truetype');
   font-weight: 800;
 }
 @font-face {
   font-family: "DIN Pro Condensed";
-  src: url('../fonts/DINPro-CondMedium.eot?1502802978');
-  src: url('../fonts/DINPro-CondMedium.eot?&1502802978#iefix') format('embedded-opentype'), url('../fonts/DINPro-CondMedium.woff?1502802978') format('woff'), url('../fonts/DINPro-CondMedium.woff2?1502802978') format('woff2'), url('../fonts/DINPro-CondMedium.ttf?1501666190') format('truetype');
+  src: url('../fonts/DINPro-CondMedium.eot?1502804951');
+  src: url('../fonts/DINPro-CondMedium.eot?&1502804951#iefix') format('embedded-opentype'), url('../fonts/DINPro-CondMedium.woff?1502804951') format('woff'), url('../fonts/DINPro-CondMedium.woff2?1502804951') format('woff2'), url('../fonts/DINPro-CondMedium.ttf?1501666190') format('truetype');
   font-weight: 600;
 }
 @font-face {
   font-family: "SignPainter HouseScript";
-  src: url('../fonts/SignPainter-HouseScript.eot?1502802980');
-  src: url('../fonts/SignPainter-HouseScript.eot?&1502802980#iefix') format('embedded-opentype'), url('../fonts/SignPainter-HouseScript.woff?1502802980') format('woff'), url('../fonts/SignPainter-HouseScript.woff2?1502802980') format('woff2'), url('../fonts/SignPainter-HouseScript.ttf?1440595482') format('truetype');
+  src: url('../fonts/SignPainter-HouseScript.eot?1502804951');
+  src: url('../fonts/SignPainter-HouseScript.eot?&1502804951#iefix') format('embedded-opentype'), url('../fonts/SignPainter-HouseScript.woff?1502804951') format('woff'), url('../fonts/SignPainter-HouseScript.woff2?1502804951') format('woff2'), url('../fonts/SignPainter-HouseScript.ttf?1440595482') format('truetype');
   font-weight: 400;
 }
 body {
@@ -181,8 +181,8 @@ table tbody tr:last-child td {
 
 @font-face {
   font-family: "FontIcons";
-  src: url('../fonts/FontIcons.eot?1502802980');
-  src: url('../fonts/FontIcons.eot?&1502802980#iefix') format('embedded-opentype'), url('../fonts/FontIcons.woff?1502802980') format('woff'), url('../fonts/FontIcons.woff2?1502802980') format('woff2'), url('../fonts/FontIcons.svg?1502802980') format('svg'), url('../fonts/FontIcons.ttf?1502802980') format('truetype');
+  src: url('../fonts/FontIcons.eot?1502804951');
+  src: url('../fonts/FontIcons.eot?&1502804951#iefix') format('embedded-opentype'), url('../fonts/FontIcons.woff?1502804951') format('woff'), url('../fonts/FontIcons.woff2?1502804951') format('woff2'), url('../fonts/FontIcons.svg?1502804948') format('svg'), url('../fonts/FontIcons.ttf?1502804948') format('truetype');
 }
 .i-a_down, .i-a_left, .i-a_right, .i-cancel, .i-clinic, .i-email, .i-nav, .i-phone, .i-print, .i-sign, #header-right-mob .dropdown__toggle .icon {
   font-family: "FontIcons";
@@ -1126,6 +1126,7 @@ header[role='banner'] li {
   text-transform: none;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 13px;
+  font-size: 0.8125rem;
   padding: 0px 8px;
   padding: 0rem 0.5rem;
   background-color: #fff;
@@ -1159,9 +1160,28 @@ header[role='banner'] li {
 .header-textsize a {
   margin-left: 6px;
   margin-left: 0.375rem;
+  position: relative;
 }
 .header-textsize a:first-child {
   margin-left: 0;
+}
+.header-textsize a.active {
+  background-color: #8D7E58;
+  color: #fff;
+}
+.header-textsize a.active span {
+  position: absolute;
+  background-color: #8D7E58;
+  border: 1px solid #fff;
+  width: 25px;
+  height: 25px;
+  top: -10px;
+  right: -10px;
+  font-size: 13px;
+  line-height: 1;
+  text-align: center;
+  padding: 5px 0;
+  box-sizing: border-box;
 }
 
 /*======== PHONE =========*/
@@ -1261,6 +1281,9 @@ header[role='banner'] li {
 }
 #header-right-mob .header-textsize a:first-child {
   margin-left: 0;
+}
+#header-right-mob .header-textsize a.active, #header-right-mob .header-textsize a.active span {
+  background-color: #231F20;
 }
 
 /*======== MOBILE HEADER =========*/
