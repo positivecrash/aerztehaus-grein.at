@@ -84,25 +84,28 @@ header[role='banner']{
   }
 
 
-  & > li{
-
-    & > a{
-
-      .i-a_down{
+  li a{
+    .i-a_down{
+        display: none;
         position: absolute;
         @include rem('bottom', 6);
         left: 50%;
         @include rem('font-size', 6);
         @include rem('margin-left', -5);
       }
-    }
+
+      &.dropdown__toggle .i-a_down{
+        display: block;
+      }
+
+  }
+
+
+  & > li{
 
     &.active > a, &.current-menu-item > a{
       background-color: $color-gray-light;
     }
-
-    // &.current-blue.current > a{ background-color: $color-blue-light; }
-    // &.current-beige.current > a{ background-color: $color-beige-light; }
 
   }
 
@@ -209,6 +212,9 @@ header[role='banner']{
   box-sizing: border-box;
   @include rem('padding-left', 40);
 
+  font-weight: bold;
+  @include rem('font-size', 22);
+
  .i-phone{
     @include rem('font-size', 50);
 
@@ -219,9 +225,7 @@ header[role='banner']{
 
   }
 
-  a{
-    font-weight: bold;
-    @include rem('font-size', 22);
+  &, a{
     color: $color-text;
   }
 

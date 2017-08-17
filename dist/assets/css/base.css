@@ -77,20 +77,20 @@ a, a:hover, a:focus, a:visited {
 
 @font-face {
   font-family: "DIN Pro";
-  src: url('../fonts/DINPro-Bold.eot?1502821943');
-  src: url('../fonts/DINPro-Bold.eot?&1502821943#iefix') format('embedded-opentype'), url('../fonts/DINPro-Bold.woff?1502821943') format('woff'), url('../fonts/DINPro-Bold.woff2?1502821943') format('woff2'), url('../fonts/DINPro-Bold.ttf?1501666162') format('truetype');
+  src: url('../fonts/DINPro-Bold.eot?1502952420');
+  src: url('../fonts/DINPro-Bold.eot?&1502952420#iefix') format('embedded-opentype'), url('../fonts/DINPro-Bold.woff?1502952420') format('woff'), url('../fonts/DINPro-Bold.woff2?1502952420') format('woff2'), url('../fonts/DINPro-Bold.ttf?1501666162') format('truetype');
   font-weight: 800;
 }
 @font-face {
   font-family: "DIN Pro Condensed";
-  src: url('../fonts/DINPro-CondMedium.eot?1502821946');
-  src: url('../fonts/DINPro-CondMedium.eot?&1502821946#iefix') format('embedded-opentype'), url('../fonts/DINPro-CondMedium.woff?1502821946') format('woff'), url('../fonts/DINPro-CondMedium.woff2?1502821946') format('woff2'), url('../fonts/DINPro-CondMedium.ttf?1501666190') format('truetype');
+  src: url('../fonts/DINPro-CondMedium.eot?1502952422');
+  src: url('../fonts/DINPro-CondMedium.eot?&1502952422#iefix') format('embedded-opentype'), url('../fonts/DINPro-CondMedium.woff?1502952422') format('woff'), url('../fonts/DINPro-CondMedium.woff2?1502952422') format('woff2'), url('../fonts/DINPro-CondMedium.ttf?1501666190') format('truetype');
   font-weight: 600;
 }
 @font-face {
   font-family: "SignPainter HouseScript";
-  src: url('../fonts/SignPainter-HouseScript.eot?1502821946');
-  src: url('../fonts/SignPainter-HouseScript.eot?&1502821946#iefix') format('embedded-opentype'), url('../fonts/SignPainter-HouseScript.woff?1502821946') format('woff'), url('../fonts/SignPainter-HouseScript.woff2?1502821946') format('woff2'), url('../fonts/SignPainter-HouseScript.ttf?1440595482') format('truetype');
+  src: url('../fonts/SignPainter-HouseScript.eot?1502952423');
+  src: url('../fonts/SignPainter-HouseScript.eot?&1502952423#iefix') format('embedded-opentype'), url('../fonts/SignPainter-HouseScript.woff?1502952423') format('woff'), url('../fonts/SignPainter-HouseScript.woff2?1502952423') format('woff2'), url('../fonts/SignPainter-HouseScript.ttf?1440595482') format('truetype');
   font-weight: 400;
 }
 body {
@@ -181,8 +181,8 @@ table tbody tr:last-child td {
 
 @font-face {
   font-family: "FontIcons";
-  src: url('../fonts/FontIcons.eot?1502821946');
-  src: url('../fonts/FontIcons.eot?&1502821946#iefix') format('embedded-opentype'), url('../fonts/FontIcons.woff?1502821946') format('woff'), url('../fonts/FontIcons.woff2?1502821946') format('woff2'), url('../fonts/FontIcons.svg?1502821942') format('svg'), url('../fonts/FontIcons.ttf?1502821942') format('truetype');
+  src: url('../fonts/FontIcons.eot?1502952423');
+  src: url('../fonts/FontIcons.eot?&1502952423#iefix') format('embedded-opentype'), url('../fonts/FontIcons.woff?1502952423') format('woff'), url('../fonts/FontIcons.woff2?1502952423') format('woff2'), url('../fonts/FontIcons.svg?1502952419') format('svg'), url('../fonts/FontIcons.ttf?1502952419') format('truetype');
 }
 .i-a_down, .i-a_left, .i-a_right, .i-cancel, .i-clinic, .i-email, .i-nav, .i-phone, .i-print, .i-sign, #header-right-mob .dropdown__toggle .icon {
   font-family: "FontIcons";
@@ -1146,7 +1146,8 @@ header[role='banner'] li {
   list-style: none;
   margin-left: 0;
 }
-#header-nav > li > a .i-a_down {
+#header-nav li a .i-a_down {
+  display: none;
   position: absolute;
   bottom: 6px;
   bottom: 0.375rem;
@@ -1155,6 +1156,9 @@ header[role='banner'] li {
   font-size: 0.375rem;
   margin-left: -5px;
   margin-left: -0.3125rem;
+}
+#header-nav li a.dropdown__toggle .i-a_down {
+  display: block;
 }
 #header-nav > li.active > a, #header-nav > li.current-menu-item > a {
   background-color: #EDEDED;
@@ -1234,6 +1238,9 @@ header[role='banner'] li {
   box-sizing: border-box;
   padding-left: 40px;
   padding-left: 2.5rem;
+  font-weight: bold;
+  font-size: 22px;
+  font-size: 1.375rem;
 }
 .header-phone-desk .i-phone {
   font-size: 50px;
@@ -1244,10 +1251,7 @@ header[role='banner'] li {
   margin-top: -25px;
   margin-top: -1.5625rem;
 }
-.header-phone-desk a {
-  font-weight: bold;
-  font-size: 22px;
-  font-size: 1.375rem;
+.header-phone-desk, .header-phone-desk a {
   color: #231F20;
 }
 .header-phone-desk span {
@@ -1850,15 +1854,15 @@ footer[role='contentinfo'] a {
 
 /*end of COLOMENUD CARDS*/
 /*COLORED SECTIONS*/
-section.sec {
+section.sec, section.sec.page-color-gray {
   background-color: #fff;
   padding: 8px;
   margin-bottom: 34px;
 }
-section.sec:last-child {
+section.sec:last-child, section.sec.page-color-gray:last-child {
   margin-bottom: 0;
 }
-section.sec .sec-head {
+section.sec .sec-head, section.sec.page-color-gray .sec-head {
   text-align: center;
   padding: 16px 120px;
   background-color: #EDEDED;
@@ -1867,12 +1871,12 @@ section.sec .sec-head {
   margin-bottom: 8px;
 }
 @media screen and (max-width: 660px) {
-  section.sec .sec-head {
+  section.sec .sec-head, section.sec.page-color-gray .sec-head {
     padding-left: 16px;
     padding-right: 16px;
   }
 }
-section.sec .sec-head .icon {
+section.sec .sec-head .icon, section.sec.page-color-gray .sec-head .icon {
   position: absolute;
   top: 50%;
   right: 8px;
@@ -1880,17 +1884,17 @@ section.sec .sec-head .icon {
   margin-top: -12px;
 }
 @media screen and (max-width: 660px) {
-  section.sec .sec-head .icon {
+  section.sec .sec-head .icon, section.sec.page-color-gray .sec-head .icon {
     position: static;
     display: block;
     margin-top: 10px;
   }
 }
-section.sec .sec-body {
+section.sec .sec-body, section.sec.page-color-gray .sec-body {
   padding: 30px;
   border: 1px solid #EDEDED;
 }
-section.sec .avatar {
+section.sec .avatar, section.sec.page-color-gray .avatar {
   border: 1px solid #EDEDED;
 }
 
@@ -1912,8 +1916,11 @@ section.sec .avatar {
   opacity: 0.7;
   font-size: 28px;
 }
-.page-color-beige #header-nav li.current-menu-item > a {
+.page-color-beige #header-nav > li.current-menu-item > a {
   background-color: #D8D1C0;
+}
+.page-color-beige #header-nav .header-nav-submenu {
+  outline-color: #D8D1C0;
 }
 
 .page-color-blue section.sec .sec-head {
@@ -1931,8 +1938,11 @@ section.sec .avatar {
 .page-color-blue section.sec .card-content-left .d-t-cell {
   border-color: rgba(228, 235, 245, 0.7);
 }
-.page-color-blue #header-nav li.current-menu-item > a {
+.page-color-blue #header-nav > li.current-menu-item > a {
   background-color: #E4EBF5;
+}
+.page-color-blue #header-nav .header-nav-submenu {
+  outline-color: #E4EBF5;
 }
 
 /*end of COLORED SECTIONS*/
@@ -1979,6 +1989,11 @@ p.schedule {
   -webkit-filter: grayscale(0);
           filter: grayscale(0);
   pointer-events: auto;
+}
+
+.kontakt-shedule em {
+  font-weight: 300;
+  font-style: normal;
 }
 
 /* end of PAGE - KONTAKT */
