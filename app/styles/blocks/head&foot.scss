@@ -103,8 +103,23 @@ header[role='banner']{
 
   & > li{
 
-    &.active > a, &.current-menu-item > a{
+    &.current-menu-item > a{
       background-color: $color-gray-light;
+    }
+
+    &.blue{
+      .header-nav-submenu { outline-color: $color-blue-light; }
+      &.active > a{ background-color: $color-blue-light; }
+    }
+
+    &.beige{
+      .header-nav-submenu { outline-color: $color-beige-light; }
+      &.active > a{ background-color: $color-beige-light; }
+    }
+
+    &.gray{
+      .header-nav-submenu { outline-color: $color-gray-light; }
+      &.active > a{ background-color: $color-gray-light; }
     }
 
   }
@@ -114,7 +129,7 @@ header[role='banner']{
   .header-nav-submenu{
     
     @include rem('top', 70);
-    @include rem('left', 8);
+    @include rem('left', 12);
 
     text-align: left;
 
@@ -122,7 +137,7 @@ header[role='banner']{
     font-family: $font-family-base;
     @include rem('font-size', $font-size-base);
 
-    @include rem('padding', 0, 8);
+    @include rem('padding', 0, 12);
 
     background-color: #fff;
 
@@ -141,7 +156,7 @@ header[role='banner']{
     }
 
     a{
-      @include rem('padding', 8, 0);
+      @include rem('padding', 12, 0);
     }
 
     li{
@@ -353,6 +368,9 @@ header[role='banner']{
 
 }
 
+
+
+
 #header-mob-nav{
 
   text-align: center;
@@ -391,12 +409,13 @@ header[role='banner']{
         border-top: 0;
       }
 
-      &.active a{
+      &.current-menu-item > a{
         background-color: $color-text;
       }
     }
 
   }
+
 
   &.active{
       .dropdown__toggle{

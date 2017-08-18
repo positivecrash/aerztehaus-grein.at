@@ -77,20 +77,20 @@ a, a:hover, a:focus, a:visited {
 
 @font-face {
   font-family: "DIN Pro";
-  src: url('../fonts/DINPro-Bold.eot?1502952420');
-  src: url('../fonts/DINPro-Bold.eot?&1502952420#iefix') format('embedded-opentype'), url('../fonts/DINPro-Bold.woff?1502952420') format('woff'), url('../fonts/DINPro-Bold.woff2?1502952420') format('woff2'), url('../fonts/DINPro-Bold.ttf?1501666162') format('truetype');
+  src: url('../fonts/DINPro-Bold.eot?1503059516');
+  src: url('../fonts/DINPro-Bold.eot?&1503059516#iefix') format('embedded-opentype'), url('../fonts/DINPro-Bold.woff?1503059516') format('woff'), url('../fonts/DINPro-Bold.woff2?1503059516') format('woff2'), url('../fonts/DINPro-Bold.ttf?1501666162') format('truetype');
   font-weight: 800;
 }
 @font-face {
   font-family: "DIN Pro Condensed";
-  src: url('../fonts/DINPro-CondMedium.eot?1502952422');
-  src: url('../fonts/DINPro-CondMedium.eot?&1502952422#iefix') format('embedded-opentype'), url('../fonts/DINPro-CondMedium.woff?1502952422') format('woff'), url('../fonts/DINPro-CondMedium.woff2?1502952422') format('woff2'), url('../fonts/DINPro-CondMedium.ttf?1501666190') format('truetype');
+  src: url('../fonts/DINPro-CondMedium.eot?1503059518');
+  src: url('../fonts/DINPro-CondMedium.eot?&1503059518#iefix') format('embedded-opentype'), url('../fonts/DINPro-CondMedium.woff?1503059518') format('woff'), url('../fonts/DINPro-CondMedium.woff2?1503059518') format('woff2'), url('../fonts/DINPro-CondMedium.ttf?1501666190') format('truetype');
   font-weight: 600;
 }
 @font-face {
   font-family: "SignPainter HouseScript";
-  src: url('../fonts/SignPainter-HouseScript.eot?1502952423');
-  src: url('../fonts/SignPainter-HouseScript.eot?&1502952423#iefix') format('embedded-opentype'), url('../fonts/SignPainter-HouseScript.woff?1502952423') format('woff'), url('../fonts/SignPainter-HouseScript.woff2?1502952423') format('woff2'), url('../fonts/SignPainter-HouseScript.ttf?1440595482') format('truetype');
+  src: url('../fonts/SignPainter-HouseScript.eot?1503059519');
+  src: url('../fonts/SignPainter-HouseScript.eot?&1503059519#iefix') format('embedded-opentype'), url('../fonts/SignPainter-HouseScript.woff?1503059519') format('woff'), url('../fonts/SignPainter-HouseScript.woff2?1503059519') format('woff2'), url('../fonts/SignPainter-HouseScript.ttf?1440595482') format('truetype');
   font-weight: 400;
 }
 body {
@@ -181,8 +181,8 @@ table tbody tr:last-child td {
 
 @font-face {
   font-family: "FontIcons";
-  src: url('../fonts/FontIcons.eot?1502952423');
-  src: url('../fonts/FontIcons.eot?&1502952423#iefix') format('embedded-opentype'), url('../fonts/FontIcons.woff?1502952423') format('woff'), url('../fonts/FontIcons.woff2?1502952423') format('woff2'), url('../fonts/FontIcons.svg?1502952419') format('svg'), url('../fonts/FontIcons.ttf?1502952419') format('truetype');
+  src: url('../fonts/FontIcons.eot?1503059519');
+  src: url('../fonts/FontIcons.eot?&1503059519#iefix') format('embedded-opentype'), url('../fonts/FontIcons.woff?1503059519') format('woff'), url('../fonts/FontIcons.woff2?1503059519') format('woff2'), url('../fonts/FontIcons.svg?1503059515') format('svg'), url('../fonts/FontIcons.ttf?1503059515') format('truetype');
 }
 .i-a_down, .i-a_left, .i-a_right, .i-cancel, .i-clinic, .i-email, .i-nav, .i-phone, .i-print, .i-sign, #header-right-mob .dropdown__toggle .icon {
   font-family: "FontIcons";
@@ -1160,21 +1160,39 @@ header[role='banner'] li {
 #header-nav li a.dropdown__toggle .i-a_down {
   display: block;
 }
-#header-nav > li.active > a, #header-nav > li.current-menu-item > a {
+#header-nav > li.current-menu-item > a {
+  background-color: #EDEDED;
+}
+#header-nav > li.blue .header-nav-submenu {
+  outline-color: #E4EBF5;
+}
+#header-nav > li.blue.active > a {
+  background-color: #E4EBF5;
+}
+#header-nav > li.beige .header-nav-submenu {
+  outline-color: #D8D1C0;
+}
+#header-nav > li.beige.active > a {
+  background-color: #D8D1C0;
+}
+#header-nav > li.gray .header-nav-submenu {
+  outline-color: #EDEDED;
+}
+#header-nav > li.gray.active > a {
   background-color: #EDEDED;
 }
 #header-nav .header-nav-submenu {
   top: 70px;
   top: 4.375rem;
-  left: 8px;
-  left: 0.5rem;
+  left: 12px;
+  left: 0.75rem;
   text-align: left;
   text-transform: none;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 13px;
   font-size: 0.8125rem;
-  padding: 0px 8px;
-  padding: 0rem 0.5rem;
+  padding: 0px 12px;
+  padding: 0rem 0.75rem;
   background-color: #fff;
   outline-style: solid;
   outline-color: #EDEDED;
@@ -1190,8 +1208,8 @@ header[role='banner'] li {
   display: block;
 }
 #header-nav .header-nav-submenu a {
-  padding: 8px 0px;
-  padding: 0.5rem 0rem;
+  padding: 12px 0px;
+  padding: 0.75rem 0rem;
 }
 #header-nav .header-nav-submenu li {
   border-style: solid;
@@ -1380,7 +1398,7 @@ header[role='banner'] li {
 #header-mob-nav .dropdown__content li:first-child a {
   border-top: 0;
 }
-#header-mob-nav .dropdown__content li.active a {
+#header-mob-nav .dropdown__content li.current-menu-item > a {
   background-color: #231F20;
 }
 #header-mob-nav.active .dropdown__toggle {
@@ -1566,6 +1584,7 @@ footer[role='contentinfo'] a {
           transform: translateX(-100px);
   -webkit-animation: 0.6s fadeIn 1s ease forwards, 0.6s indexTextShift 1s ease-in-out forwards;
           animation: 0.6s fadeIn 1s ease forwards, 0.6s indexTextShift 1s ease-in-out forwards;
+  z-index: 10;
 }
 .cssanimations .slide_1.prevslide_0 .index-slider-text .slide-0, .cssanimations .slide_2.prevslide_1 .index-slider-text .slide-1, .cssanimations .slide_0.prevslide_2 .index-slider-text .slide-2, .cssanimations .slide_0.prevslide_1 .index-slider-text .slide-1, .cssanimations .slide_1.prevslide_2 .index-slider-text .slide-2, .cssanimations .slide_2.prevslide_0 .index-slider-text .slide-0 {
   -webkit-animation: 0.6s fadeOut 0.4s ease forwards, 0.6s indexTextShiftOut 0.4s ease-in-out forwards;

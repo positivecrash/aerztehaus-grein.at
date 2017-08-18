@@ -7642,24 +7642,29 @@ jQuery(document).ready(function($){
 	/*====== DROPDOWNS ======*/
 
 	if($('.dropdown').length > 0){
+
+        var classShow = 'active';
        
         $('.dropdown__toggle').on('click', function(e){
             e.preventDefault();
             e.stopPropagation();
 
+
+            $('.dropdown__toggle').not(this).parent('.dropdown').removeClass(classShow);
+            // console.log($('.dropdown__toggle').not(this).parent('.dropdown').html());
+
             var $ddwrap = $(this).parent('.dropdown');
-            var classShow = 'active';
 
             $ddwrap.toggleClass(classShow);
 
-
             $d.on('click', function(e){
-                if ( ($(e.target).closest($ddwrap.children('.dropdown__content')).length) ) return;
+                if ( ($(e.target).closest($ddwrap).length) ) return;
                 $ddwrap.removeClass(classShow);
                 e.stopPropagation();
             });
 
         });
+
 
     }
 

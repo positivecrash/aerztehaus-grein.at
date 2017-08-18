@@ -58,3 +58,7 @@ section.sec.print {
   -webkit-filter: none;
           filter: none;
 }
+
+#kontakt-gallery {
+  display: none;
+}
