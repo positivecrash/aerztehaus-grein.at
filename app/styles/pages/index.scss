@@ -122,13 +122,16 @@
 .slide_2{
 
 	img.slide-2{
+		// max-width: 100%;
+		// margin-bottom: 120px;
+		max-height: 52vh;
 		max-width: 100%;
-		margin-bottom: 120px;
+		margin-bottom: 80px;
 	}
 
 	img.slide-2-mob{
 		@extend %slide_hide;
-		max-width: 70%;
+		max-width: 48%;
 		margin-bottom: 50px;
 	}
 }
@@ -144,6 +147,12 @@
 		height: 60vh;
 	}
 }
+
+// .slide_2{
+// 	img.slide-2{
+// 		height: 60vh;
+// 	}
+// }
 
 
 /*ANIMATIONS*/
