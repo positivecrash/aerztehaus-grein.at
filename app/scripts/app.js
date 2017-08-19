@@ -166,6 +166,26 @@ jQuery(document).ready(function($){
         }
     }
 
+
+
+    /*====== COOKIES MESSAGE ======*/
+    console.log(Cookies.get('cookieInfo'));
+
+    if ( !Cookies.get('cookieInfo') ){
+
+        console.log('yes');
+        
+        $('#info-cookies').fadeIn();
+
+        $('#info-cookies .i-cancel').on('click', function(e){
+            e.preventDefault();
+            e.stopPropagation();
+
+            $('#info-cookies').fadeOut();
+
+            Cookies.set('cookieInfo', 1);
+        });
+    }
     
 
 });

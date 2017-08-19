@@ -449,6 +449,45 @@ header[role='banner']{
 
 
 
+/*======== COOKIES =========*/
+#info-cookies{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+  display: none;
+
+  @include rem('padding', 10);
+  background-color: $color-beige-light;
+  text-align: center;
+  @include rem('font-size', 16);
+
+  .setw{
+    position: relative;
+  }
+
+  &, a{
+    color: $color-beige;
+  }
+
+  a.i-cancel{
+    @include rem('font-size', 20);
+    position: absolute;
+    right: 0;
+    top: 0;
+    // top: 50%;
+    // @include rem('margin-top', -10);
+  }
+
+  #info-cookies-content{
+    @include rem('padding-right', 50);
+  }
+}
+
+
+
+
 /*======== FOOTER =========*/
 
 footer[role='contentinfo']{
