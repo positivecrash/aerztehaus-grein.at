@@ -169,11 +169,8 @@ jQuery(document).ready(function($){
 
 
     /*====== COOKIES MESSAGE ======*/
-    console.log(Cookies.get('cookieInfo'));
 
     if ( !Cookies.get('cookieInfo') ){
-
-        console.log('yes');
         
         $('#info-cookies').fadeIn();
 
